@@ -144,6 +144,7 @@ def main() -> None:
     parser.add_argument("--rapx-version", required=True)
     parser.add_argument("--toolchain", required=True)
     parser.add_argument("--timeout-minutes", type=int, default=330)
+    parser.add_argument("--target-dir", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -159,10 +160,11 @@ def main() -> None:
     env = dict(os.environ)
     for key in ("RUSTFLAGS", "RUSTC_WRAPPER", "RUSTC_WORKSPACE_WRAPPER", "CARGO_ENCODED_RUSTFLAGS"):
         env.pop(key, None)
+    target_dir = (args.target_dir or args.output / "target").resolve()
     env.update({
         "CARGO_BUILD_JOBS": "1",
         "CARGO_INCREMENTAL": "0",
-        "CARGO_TARGET_DIR": str(args.output / "target"),
+        "CARGO_TARGET_DIR": str(target_dir),
         "CARGO_TERM_COLOR": "never",
         "NUM_JOBS": "1",
         "RAYON_NUM_THREADS": "1",

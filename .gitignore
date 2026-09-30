@@ -1,5 +1,3 @@
 **/target/
-results/*
-!results/.gitkeep
 __pycache__/
 *.pyc

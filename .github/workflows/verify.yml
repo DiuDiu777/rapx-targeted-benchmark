@@ -13,7 +13,11 @@ on:
         default: "120"
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: targeted-rapx-results
+  cancel-in-progress: false
 
 jobs:
   setup:
@@ -90,6 +94,7 @@ jobs:
             --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
             --toolchain "${{ needs.setup.outputs.toolchain }}" \
             --timeout-minutes "${{ matrix.name == 'smallvec' && inputs.smallvec_timeout_minutes || inputs.timeout_minutes }}" \
+            --target-dir "$RUNNER_TEMP/target-${{ matrix.id }}" \
             --output "results/${{ matrix.id }}"
       - uses: actions/upload-artifact@v4
         if: always()
@@ -104,6 +109,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/download-artifact@v4
         with:
           pattern: result-*
@@ -115,10 +122,36 @@ jobs:
             --manifest targets.json \
             --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
             --toolchain "${{ needs.setup.outputs.toolchain }}" \
-            --output results/summary
-          cat results/summary/summary.md >> "$GITHUB_STEP_SUMMARY"
+            --output "$RUNNER_TEMP/summary"
+          cat "$RUNNER_TEMP/summary/summary.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Save dated results to the repository
+        if: github.ref_type == 'branch'
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          run_date="$(TZ=Asia/Shanghai date +%F)"
+          python3 scripts/persist_results.py \
+            --input collected \
+            --summary "$RUNNER_TEMP/summary" \
+            --results-root results \
+            --run-date "$run_date" \
+            --run-id "$GITHUB_RUN_ID" \
+            --run-url "$RUN_URL" \
+            --commit-sha "$GITHUB_SHA"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results
+          if git diff --cached --quiet; then
+            echo "Run $GITHUB_RUN_ID is already stored."
+            exit 0
+          fi
+          git commit -m "Store RAPx results for $run_date (run $GITHUB_RUN_ID)"
+          git pull --rebase origin "$TARGET_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: targeted-summary
-          path: results/summary
+          path: ${{ runner.temp }}/summary
           retention-days: 90

@@ -39,9 +39,18 @@ count as one manifest target.
 
 ## Results
 
-The repository's `results/` directory is intentionally ignored because a
-GitHub-hosted runner has an ephemeral filesystem. Results are attached to each
-workflow run instead:
+Every completed branch run is committed by `github-actions[bot]` under:
+
+```text
+results/<Asia-Shanghai date>/run-<GitHub run id>/
+```
+
+[`results/README.md`](results/README.md) is rebuilt as a newest-first index.
+Each run directory contains `summary.md`, `summary.json`, `run.json`, and one
+compact JSON result per crate under `crates/`.
+
+The full logs remain attached to each workflow run instead of being committed
+to Git history:
 
 - `targeted-summary` contains `summary.md` and `summary.json` and is retained
   for 90 days.

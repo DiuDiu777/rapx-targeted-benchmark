@@ -17,22 +17,24 @@ jobs:
     timeout-minutes: 90
     outputs:
       rapx_version: ${{ steps.rapx.outputs.version }}
+      toolchain: ${{ steps.rapx.outputs.toolchain }}
       matrix: ${{ steps.matrix.outputs.value }}
     steps:
       - uses: actions/checkout@v4
       - name: Resolve latest crates.io RAPx
         id: rapx
         run: |
-          version="$(python3 scripts/resolve_rapx.py)"
-          echo "version=$version" >> "$GITHUB_OUTPUT"
-          echo "Installing RAPx $version from crates.io"
-      - name: Install latest nightly
-        run: rustup toolchain install nightly --profile minimal --component rustc-dev,rust-src,llvm-tools-preview
+          python3 scripts/resolve_rapx.py --github-output "$GITHUB_OUTPUT"
+      - name: Install release-time nightly
+        run: rustup toolchain install "${{ steps.rapx.outputs.toolchain }}" --profile minimal --component rustc-dev,rust-src,llvm-tools-preview
       - name: Install crates.io RAPx
-        run: cargo +nightly install rapx --version "${{ steps.rapx.outputs.version }}" --locked --root "$RUNNER_TEMP/rapx"
-      - name: Record toolchain
+        run: cargo +"${{ steps.rapx.outputs.toolchain }}" install rapx --version "${{ steps.rapx.outputs.version }}" --locked --root "$RUNNER_TEMP/rapx"
+      - name: Check RAPx and record toolchain
         run: |
-          rustc +nightly -Vv > "$RUNNER_TEMP/rapx/toolchain.txt"
+          export PATH="$RUNNER_TEMP/rapx/bin:$PATH"
+          export LD_LIBRARY_PATH="$(rustc +${{ steps.rapx.outputs.toolchain }} --print sysroot)/lib:${LD_LIBRARY_PATH:-}"
+          cargo +"${{ steps.rapx.outputs.toolchain }}" rapx verify --help
+          rustc +"${{ steps.rapx.outputs.toolchain }}" -Vv > "$RUNNER_TEMP/rapx/toolchain.txt"
           echo "${{ steps.rapx.outputs.version }}" > "$RUNNER_TEMP/rapx/version.txt"
       - uses: actions/upload-artifact@v4
         with:
@@ -62,8 +64,8 @@ jobs:
       matrix: ${{ fromJSON(needs.setup.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
-      - name: Install latest nightly
-        run: rustup toolchain install nightly --profile minimal --component rustc-dev,rust-src,llvm-tools-preview
+      - name: Install RAPx-compatible nightly
+        run: rustup toolchain install "${{ needs.setup.outputs.toolchain }}" --profile minimal --component rustc-dev,rust-src,llvm-tools-preview
       - uses: actions/download-artifact@v4
         with:
           name: rapx-bin
@@ -72,7 +74,7 @@ jobs:
         run: |
           chmod +x "$RUNNER_TEMP/rapx/bin/rapx" "$RUNNER_TEMP/rapx/bin/cargo-rapx"
           echo "$RUNNER_TEMP/rapx/bin" >> "$GITHUB_PATH"
-          echo "LD_LIBRARY_PATH=$(rustc +nightly --print sysroot)/lib:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$(rustc +${{ needs.setup.outputs.toolchain }} --print sysroot)/lib:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
       - name: Verify targeted APIs
         run: |
           python3 scripts/run_one.py \
@@ -81,6 +83,7 @@ jobs:
             --version "${{ matrix.version }}" \
             --declared-targets "${{ matrix.targets }}" \
             --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
+            --toolchain "${{ needs.setup.outputs.toolchain }}" \
             --timeout-minutes "${{ inputs.timeout_minutes }}" \
             --output "results/${{ matrix.id }}"
       - uses: actions/upload-artifact@v4
@@ -106,6 +109,7 @@ jobs:
             --input collected \
             --manifest targets.json \
             --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
+            --toolchain "${{ needs.setup.outputs.toolchain }}" \
             --output results/summary
           cat results/summary/summary.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4

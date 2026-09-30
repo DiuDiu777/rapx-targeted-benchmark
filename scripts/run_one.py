@@ -71,6 +71,7 @@ def main() -> None:
     parser.add_argument("--version", required=True)
     parser.add_argument("--declared-targets", required=True, type=int)
     parser.add_argument("--rapx-version", required=True)
+    parser.add_argument("--toolchain", required=True)
     parser.add_argument("--timeout-minutes", type=int, default=330)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -79,7 +80,7 @@ def main() -> None:
     args.output.mkdir(parents=True, exist_ok=True)
     log_path = args.output / "rapx.log"
     command = [
-        "cargo", "+nightly", "rapx", "verify",
+        "cargo", "+" + args.toolchain, "rapx", "verify",
         "--mode", "targeted", "--postfix-repeat", "auto",
         "--crate", args.name,
         "--", "--locked", "--jobs", "1",
@@ -139,6 +140,7 @@ def main() -> None:
         "crate": args.name,
         "crate_version": args.version,
         "rapx_version": args.rapx_version,
+        "toolchain": args.toolchain,
         "status": status,
         "declared_api_targets": args.declared_targets,
         "active_targets": total,

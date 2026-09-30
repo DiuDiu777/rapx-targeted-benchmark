@@ -23,6 +23,7 @@ def main() -> None:
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--rapx-version", required=True)
+    parser.add_argument("--toolchain", required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -35,6 +36,7 @@ def main() -> None:
     total = sum(row["active_targets"] for row in results)
     output = {
         "rapx_version": args.rapx_version,
+        "toolchain": args.toolchain,
         "crate_count": len(results),
         "active_targets": total,
         "counts": counts,
@@ -47,6 +49,8 @@ def main() -> None:
 
     lines = [
         f"# RAPx {args.rapx_version} targeted results",
+        "",
+        f"Toolchain: `{args.toolchain}`",
         "",
         f"**Soundness pass rate: {counts['SOUND']} / {total} = {rate(counts['SOUND'], total):.2f}%**",
         "",

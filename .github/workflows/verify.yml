@@ -1,0 +1,115 @@
+name: Targeted RAPx verify
+
+on:
+  workflow_dispatch:
+    inputs:
+      timeout_minutes:
+        description: Per-crate timeout in minutes
+        required: true
+        default: "330"
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    outputs:
+      rapx_version: ${{ steps.rapx.outputs.version }}
+      matrix: ${{ steps.matrix.outputs.value }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve latest crates.io RAPx
+        id: rapx
+        run: |
+          version="$(python3 scripts/resolve_rapx.py)"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Installing RAPx $version from crates.io"
+      - name: Install latest nightly
+        run: rustup toolchain install nightly --profile minimal --component rustc-dev,rust-src,llvm-tools-preview
+      - name: Install crates.io RAPx
+        run: cargo +nightly install rapx --version "${{ steps.rapx.outputs.version }}" --locked --root "$RUNNER_TEMP/rapx"
+      - name: Record toolchain
+        run: |
+          rustc +nightly -Vv > "$RUNNER_TEMP/rapx/toolchain.txt"
+          echo "${{ steps.rapx.outputs.version }}" > "$RUNNER_TEMP/rapx/version.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rapx-bin
+          path: ${{ runner.temp }}/rapx
+          retention-days: 7
+      - name: Build matrix
+        id: matrix
+        run: |
+          value="$(python3 - <<'PY'
+          import json
+          data=json.load(open('targets.json'))
+          print(json.dumps({'include': [
+              {'id': f"{c['name']}-{c['version']}", 'name': c['name'], 'version': c['version'], 'targets': c['target_count']}
+              for c in data['crates']
+          ]}, separators=(',', ':')))
+          PY
+          )"
+          echo "value=$value" >> "$GITHUB_OUTPUT"
+
+  verify:
+    needs: setup
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.setup.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install latest nightly
+        run: rustup toolchain install nightly --profile minimal --component rustc-dev,rust-src,llvm-tools-preview
+      - uses: actions/download-artifact@v4
+        with:
+          name: rapx-bin
+          path: ${{ runner.temp }}/rapx
+      - name: Configure RAPx
+        run: |
+          chmod +x "$RUNNER_TEMP/rapx/bin/rapx" "$RUNNER_TEMP/rapx/bin/cargo-rapx"
+          echo "$RUNNER_TEMP/rapx/bin" >> "$GITHUB_PATH"
+          echo "LD_LIBRARY_PATH=$(rustc +nightly --print sysroot)/lib:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+      - name: Verify targeted APIs
+        run: |
+          python3 scripts/run_one.py \
+            --crate "vendor/${{ matrix.id }}" \
+            --name "${{ matrix.name }}" \
+            --version "${{ matrix.version }}" \
+            --declared-targets "${{ matrix.targets }}" \
+            --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
+            --timeout-minutes "${{ inputs.timeout_minutes }}" \
+            --output "results/${{ matrix.id }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result-${{ matrix.id }}
+          path: results/${{ matrix.id }}
+          retention-days: 30
+
+  summary:
+    if: always() && needs.setup.result == 'success'
+    needs: [setup, verify]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: result-*
+          path: collected
+      - name: Aggregate counts
+        run: |
+          python3 scripts/aggregate.py \
+            --input collected \
+            --manifest targets.json \
+            --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
+            --output results/summary
+          cat results/summary/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: targeted-summary
+          path: results/summary
+          retention-days: 90

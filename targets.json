@@ -1,0 +1,2660 @@
+{
+  "schema_version": 1,
+  "selection": "10 crates with the most public targets in the 2026-09-28 175-crate run",
+  "crates": [
+    {
+      "name": "openssl",
+      "version": "0.10.81",
+      "downloads_rank": 313,
+      "source_sha256": "77823a27f0babb03091cb9ed9ef80af3b39dbc82f97e8fa530374b7dafd87a45",
+      "target_count": 170,
+      "targets": [
+        {
+          "api": "openssl::aes::AesKey::new_decrypt",
+          "source_file": "src/aes.rs"
+        },
+        {
+          "api": "openssl::aes::AesKey::new_encrypt",
+          "source_file": "src/aes.rs"
+        },
+        {
+          "api": "openssl::aes::unwrap_key",
+          "source_file": "src/aes.rs"
+        },
+        {
+          "api": "openssl::aes::wrap_key",
+          "source_file": "src/aes.rs"
+        },
+        {
+          "api": "openssl::base64::decode_block",
+          "source_file": "src/base64.rs"
+        },
+        {
+          "api": "openssl::base64::encode_block",
+          "source_file": "src/base64.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_ccm",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_cfb1",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_cfb8",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_ctr",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_gcm",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_ocb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_wrap",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_wrap_pad",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_128_xts",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_ccm",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_cfb1",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_cfb8",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_ctr",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_gcm",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_ocb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_wrap",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_192_wrap_pad",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_ccm",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_cfb1",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_cfb8",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_ctr",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_gcm",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_ocb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_wrap",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_wrap_pad",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::aes_256_xts",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::bf_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::bf_cfb64",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::bf_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::bf_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia128_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia128_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia128_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia128_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia192_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia192_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia192_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia192_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia256_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia256_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia256_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::camellia256_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::cast5_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::cast5_cfb64",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::cast5_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::cast5_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::chacha20",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::chacha20_poly1305",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_ede3",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_ede3_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_ede3_cfb64",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_ede3_cfb8",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_ede3_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::des_ede3_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::fetch",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::from_nid",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::idea_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::idea_cfb64",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::idea_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::idea_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::rc4",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::seed_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::seed_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::seed_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::seed_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::sm4_cbc",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::sm4_cfb128",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::sm4_ctr",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::sm4_ecb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::cipher::Cipher::sm4_ofb",
+          "source_file": "src/cipher.rs"
+        },
+        {
+          "api": "openssl::encrypt::Decrypter::rsa_padding",
+          "source_file": "src/encrypt.rs"
+        },
+        {
+          "api": "openssl::encrypt::Decrypter::set_rsa_oaep_label",
+          "source_file": "src/encrypt.rs"
+        },
+        {
+          "api": "openssl::encrypt::Encrypter::rsa_padding",
+          "source_file": "src/encrypt.rs"
+        },
+        {
+          "api": "openssl::encrypt::Encrypter::set_rsa_oaep_label",
+          "source_file": "src/encrypt.rs"
+        },
+        {
+          "api": "openssl::envelope::Open::new",
+          "source_file": "src/envelope.rs"
+        },
+        {
+          "api": "openssl::envelope::Seal::new",
+          "source_file": "src/envelope.rs"
+        },
+        {
+          "api": "openssl::error::Error::get",
+          "source_file": "src/error.rs"
+        },
+        {
+          "api": "openssl::error::Error::library",
+          "source_file": "src/error.rs"
+        },
+        {
+          "api": "openssl::error::Error::put",
+          "source_file": "src/error.rs"
+        },
+        {
+          "api": "openssl::error::Error::reason",
+          "source_file": "src/error.rs"
+        },
+        {
+          "api": "openssl::hash::Hasher::drop",
+          "source_file": "src/hash.rs"
+        },
+        {
+          "api": "openssl::md::Md::fetch",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::from_nid",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::md5",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::null",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::ripemd160",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha1",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha224",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha256",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha384",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha3_224",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha3_256",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha3_384",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha3_512",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sha512",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::shake128",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::shake256",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::Md::sm3",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::md::MdRef::type_",
+          "source_file": "src/md.rs"
+        },
+        {
+          "api": "openssl::nid::Nid::create",
+          "source_file": "src/nid.rs"
+        },
+        {
+          "api": "openssl::nid::Nid::long_name",
+          "source_file": "src/nid.rs"
+        },
+        {
+          "api": "openssl::nid::Nid::short_name",
+          "source_file": "src/nid.rs"
+        },
+        {
+          "api": "openssl::pkcs12::Pkcs12Builder::build2",
+          "source_file": "src/pkcs12.rs"
+        },
+        {
+          "api": "openssl::pkcs12::Pkcs12Builder::pkey",
+          "source_file": "src/pkcs12.rs"
+        },
+        {
+          "api": "openssl::pkcs5::bytes_to_key",
+          "source_file": "src/pkcs5.rs"
+        },
+        {
+          "api": "openssl::rsa::RsaPrivateKeyBuilder::new",
+          "source_file": "src/rsa.rs"
+        },
+        {
+          "api": "openssl::sha::sha1",
+          "source_file": "src/sha.rs"
+        },
+        {
+          "api": "openssl::sha::sha224",
+          "source_file": "src/sha.rs"
+        },
+        {
+          "api": "openssl::sha::sha256",
+          "source_file": "src/sha.rs"
+        },
+        {
+          "api": "openssl::sha::sha384",
+          "source_file": "src/sha.rs"
+        },
+        {
+          "api": "openssl::sha::sha512",
+          "source_file": "src/sha.rs"
+        },
+        {
+          "api": "openssl::sign::Signer::rsa_padding",
+          "source_file": "src/sign.rs"
+        },
+        {
+          "api": "openssl::sign::Verifier::rsa_padding",
+          "source_file": "src/sign.rs"
+        },
+        {
+          "api": "openssl::ssl::SslCipher::deref",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslCipherRef::description",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslCipherRef::handshake_digest",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslCipherRef::name",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslCipherRef::standard_name",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslCipherRef::version",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslContextBuilder::cert_store",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslContextBuilder::from_ptr",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslContextBuilder::load_verify_locations",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslContextBuilder::new",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslContextBuilder::set_tlsext_use_srtp",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslContextBuilder::verify_param",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslStream::drop",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslStream::from_raw_parts",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslStream::read",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::SslStream::ssl_read",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::cipher_name",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::ssl::select_next_proto",
+          "source_file": "src/ssl/mod.rs"
+        },
+        {
+          "api": "openssl::stack::IntoIter::next",
+          "source_file": "src/stack.rs"
+        },
+        {
+          "api": "openssl::stack::IntoIter::next_back",
+          "source_file": "src/stack.rs"
+        },
+        {
+          "api": "openssl::stack::Iter::next",
+          "source_file": "src/stack.rs"
+        },
+        {
+          "api": "openssl::stack::Iter::next_back",
+          "source_file": "src/stack.rs"
+        },
+        {
+          "api": "openssl::stack::Stack::deref",
+          "source_file": "src/stack.rs"
+        },
+        {
+          "api": "openssl::stack::StackRef::get",
+          "source_file": "src/stack.rs"
+        },
+        {
+          "api": "openssl::symm::Crypter::new",
+          "source_file": "src/symm.rs"
+        },
+        {
+          "api": "openssl::version::built_on",
+          "source_file": "src/version.rs"
+        },
+        {
+          "api": "openssl::version::c_flags",
+          "source_file": "src/version.rs"
+        },
+        {
+          "api": "openssl::version::dir",
+          "source_file": "src/version.rs"
+        },
+        {
+          "api": "openssl::version::platform",
+          "source_file": "src/version.rs"
+        },
+        {
+          "api": "openssl::version::version",
+          "source_file": "src/version.rs"
+        },
+        {
+          "api": "openssl::x509::X509Builder::x509v3_context",
+          "source_file": "src/x509/mod.rs"
+        },
+        {
+          "api": "openssl::x509::X509NameBuilder::append_entry_by_text",
+          "source_file": "src/x509/mod.rs"
+        },
+        {
+          "api": "openssl::x509::X509NameBuilder::append_entry_by_text_with_type",
+          "source_file": "src/x509/mod.rs"
+        },
+        {
+          "api": "openssl::x509::X509PurposeRef::get_by_sname",
+          "source_file": "src/x509/mod.rs"
+        },
+        {
+          "api": "openssl::x509::X509PurposeRef::purpose",
+          "source_file": "src/x509/mod.rs"
+        },
+        {
+          "api": "openssl::x509::X509ReqBuilder::x509v3_context",
+          "source_file": "src/x509/mod.rs"
+        },
+        {
+          "api": "openssl::x509::X509VerifyResult::error_string",
+          "source_file": "src/x509/mod.rs"
+        }
+      ]
+    },
+    {
+      "name": "heapless",
+      "version": "0.9.3",
+      "downloads_rank": 689,
+      "source_sha256": "25ba4bd83f9415b58b4ed8dc5714c76e626a105be4646c02630ad730ad3b5aa4",
+      "target_count": 77,
+      "targets": [
+        {
+          "api": "heapless::binary_heap::BinaryHeapInner::pop_unchecked",
+          "source_file": "src/binary_heap.rs"
+        },
+        {
+          "api": "heapless::binary_heap::PeekMutInner::deref",
+          "source_file": "src/binary_heap.rs"
+        },
+        {
+          "api": "heapless::binary_heap::PeekMutInner::deref_mut",
+          "source_file": "src/binary_heap.rs"
+        },
+        {
+          "api": "heapless::c_string::CString::as_c_str",
+          "source_file": "src/c_string.rs"
+        },
+        {
+          "api": "heapless::c_string::CString::from_bytes_with_nul_unchecked",
+          "source_file": "src/c_string.rs"
+        },
+        {
+          "api": "heapless::c_string::CString::from_raw",
+          "source_file": "src/c_string.rs"
+        },
+        {
+          "api": "heapless::c_string::CString::into_string",
+          "source_file": "src/c_string.rs"
+        },
+        {
+          "api": "heapless::deque::Deque::try_from",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::as_mut_slices",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::as_slices",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::back",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::back_mut",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::front",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::front_mut",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::get",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::get_mut",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::get_unchecked",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::get_unchecked_mut",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::make_contiguous",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::pop_back_unchecked",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::pop_front_unchecked",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::push_back_unchecked",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::push_front_unchecked",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::swap",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::swap_remove_back",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::swap_remove_front",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::swap_unchecked",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::deque::DequeInner::truncate",
+          "source_file": "src/deque.rs"
+        },
+        {
+          "api": "heapless::history_buf::HistoryBufInner::as_slice",
+          "source_file": "src/history_buf.rs"
+        },
+        {
+          "api": "heapless::history_buf::HistoryBufInner::write",
+          "source_file": "src/history_buf.rs"
+        },
+        {
+          "api": "heapless::index_map::IndexMap::get",
+          "source_file": "src/index_map.rs"
+        },
+        {
+          "api": "heapless::index_map::IndexMap::get_mut",
+          "source_file": "src/index_map.rs"
+        },
+        {
+          "api": "heapless::index_map::OccupiedEntry::get",
+          "source_file": "src/index_map.rs"
+        },
+        {
+          "api": "heapless::index_map::OccupiedEntry::get_mut",
+          "source_file": "src/index_map.rs"
+        },
+        {
+          "api": "heapless::index_map::OccupiedEntry::insert",
+          "source_file": "src/index_map.rs"
+        },
+        {
+          "api": "heapless::index_map::OccupiedEntry::into_mut",
+          "source_file": "src/index_map.rs"
+        },
+        {
+          "api": "heapless::index_map::VacantEntry::insert",
+          "source_file": "src/index_map.rs"
+        },
+        {
+          "api": "heapless::linear_map::OccupiedEntry::get",
+          "source_file": "src/linear_map.rs"
+        },
+        {
+          "api": "heapless::linear_map::OccupiedEntry::get_mut",
+          "source_file": "src/linear_map.rs"
+        },
+        {
+          "api": "heapless::linear_map::OccupiedEntry::insert",
+          "source_file": "src/linear_map.rs"
+        },
+        {
+          "api": "heapless::linear_map::OccupiedEntry::into_mut",
+          "source_file": "src/linear_map.rs"
+        },
+        {
+          "api": "heapless::linear_map::OccupiedEntry::key",
+          "source_file": "src/linear_map.rs"
+        },
+        {
+          "api": "heapless::pool::boxed::Box::drop",
+          "source_file": "src/pool/boxed.rs"
+        },
+        {
+          "api": "heapless::pool::boxed::Box::from_raw",
+          "source_file": "src/pool/boxed.rs"
+        },
+        {
+          "api": "heapless::sorted_linked_list::SortedLinkedListInner::drop",
+          "source_file": "src/sorted_linked_list.rs"
+        },
+        {
+          "api": "heapless::spsc::Iter::next",
+          "source_file": "src/spsc.rs"
+        },
+        {
+          "api": "heapless::spsc::Iter::next_back",
+          "source_file": "src/spsc.rs"
+        },
+        {
+          "api": "heapless::spsc::IterMut::next",
+          "source_file": "src/spsc.rs"
+        },
+        {
+          "api": "heapless::spsc::IterMut::next_back",
+          "source_file": "src/spsc.rs"
+        },
+        {
+          "api": "heapless::spsc::QueueInner::drop",
+          "source_file": "src/spsc.rs"
+        },
+        {
+          "api": "heapless::spsc::QueueInner::peek",
+          "source_file": "src/spsc.rs"
+        },
+        {
+          "api": "heapless::string::String::from_utf8",
+          "source_file": "src/string/mod.rs"
+        },
+        {
+          "api": "heapless::string::StringInner::as_mut_str",
+          "source_file": "src/string/mod.rs"
+        },
+        {
+          "api": "heapless::string::StringInner::as_str",
+          "source_file": "src/string/mod.rs"
+        },
+        {
+          "api": "heapless::string::StringInner::drain",
+          "source_file": "src/string/mod.rs"
+        },
+        {
+          "api": "heapless::string::StringInner::insert",
+          "source_file": "src/string/mod.rs"
+        },
+        {
+          "api": "heapless::string::StringInner::insert_str",
+          "source_file": "src/string/mod.rs"
+        },
+        {
+          "api": "heapless::string::StringInner::remove",
+          "source_file": "src/string/mod.rs"
+        },
+        {
+          "api": "heapless::vec::IntoIter::clone",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::IntoIter::drop",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::IntoIter::fmt",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::IntoIter::next",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::Vec::cast_len_type",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::Vec::from_array",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::Vec::into_array",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::as_mut_slice",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::as_slice",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::drain",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::drop",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::extend_from_slice",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::insert",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::pop_unchecked",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::push_unchecked",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::remove",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::retain_mut",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::swap_remove_unchecked",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "heapless::vec::VecInner::truncate",
+          "source_file": "src/vec/mod.rs"
+        }
+      ]
+    },
+    {
+      "name": "bumpalo",
+      "version": "3.20.3",
+      "downloads_rank": 193,
+      "source_sha256": "72f5acc6cb2ba439de613abc23857ec3d78374d8ed5ac84e9d11336e87da8649",
+      "target_count": 70,
+      "targets": [
+        {
+          "api": "bumpalo::Bump::alloc_slice_clone",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::alloc_slice_copy",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::alloc_slice_fill_with",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::alloc_slice_try_fill_with",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::alloc_str",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::alloc_with",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::allocated_bytes",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::chunk_capacity",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::reset",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::try_alloc_slice_clone",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::try_alloc_slice_copy",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::try_alloc_slice_fill_with",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::try_alloc_str",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::try_alloc_try_with",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::Bump::try_alloc_with",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::ChunkIter::next",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::ChunkRawIter::next",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::default",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::deref",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::deref_mut",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::downcast",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::drop",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::from",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::from_raw",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::into_inner",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::boxed::Box::try_from",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::Drain::drop",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::deref",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::deref_mut",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::from_raw_parts_in",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::from_str_in",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::from_utf8_lossy_in",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::index",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::index_mut",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::into_bump_str",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::pop",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::remove",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::replace_range",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::retain",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::string::String::split_off",
+          "source_file": "src/collections/string.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Drain::drop",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Drain::next",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Drain::next_back",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::DrainFilter::drop",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::DrainFilter::next",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::IntoIter::as_mut_slice",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::IntoIter::as_slice",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::IntoIter::next",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::IntoIter::next_back",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::IntoIter::size_hint",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Splice::drop",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::append",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::as_mut_ptr",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::as_ptr",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::deref",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::deref_mut",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::drain",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::drain_filter",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::drop",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::from_raw_parts_in",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::insert",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::into_boxed_slice",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::into_bump_slice",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::into_bump_slice_mut",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::into_iter",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::pop",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::remove",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::split_off",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::swap_remove",
+          "source_file": "src/collections/vec.rs"
+        },
+        {
+          "api": "bumpalo::collections::vec::Vec::truncate",
+          "source_file": "src/collections/vec.rs"
+        }
+      ]
+    },
+    {
+      "name": "allocator-api2",
+      "version": "0.4.0",
+      "downloads_rank": 263,
+      "source_sha256": "c880a97d28a3681c0267bd29cff89621202715b065127cd445fa0f0fe0aa2880",
+      "target_count": 61,
+      "targets": [
+        {
+          "api": "allocator_api2::alloc::Allocator::allocate_zeroed",
+          "source_file": "src/alloc/mod.rs"
+        },
+        {
+          "api": "allocator_api2::alloc::Allocator::grow",
+          "source_file": "src/alloc/mod.rs"
+        },
+        {
+          "api": "allocator_api2::alloc::Allocator::grow_zeroed",
+          "source_file": "src/alloc/mod.rs"
+        },
+        {
+          "api": "allocator_api2::alloc::Allocator::shrink",
+          "source_file": "src/alloc/mod.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::assume_init",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::clone",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::default",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::deref",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::deref_mut",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::downcast",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::downcast_unchecked",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::drop",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::from",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::from_non_null",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::from_non_null_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::from_raw",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::from_raw_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::into_boxed_slice",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::into_inner",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::into_non_null",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::into_non_null_with_allocator",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::into_pin",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::into_vec",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::leak",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::new_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::slice",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::try_from",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::try_new_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::try_new_uninit_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::try_new_uninit_slice_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::try_new_zeroed_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::try_new_zeroed_slice_in",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::boxed::Box::write",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::append",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::as_mut_ptr",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::as_ptr",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::clear",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::dedup_by",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::deref",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::deref_mut",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::drain",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::drop",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::extend",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::extend_from_within",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::from_raw_parts",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::from_raw_parts_in",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::insert",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::into_boxed_slice",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::into_flattened",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::into_iter",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::into_raw_parts_with_alloc",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::leak",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::pop",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::push",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::push_within_capacity",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::remove",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::retain_mut",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::spare_capacity_mut",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::split_off",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::swap_remove",
+          "source_file": "src/vec/mod.rs"
+        },
+        {
+          "api": "allocator_api2::vec::Vec::truncate",
+          "source_file": "src/vec/mod.rs"
+        }
+      ]
+    },
+    {
+      "name": "bitvec",
+      "version": "1.1.1",
+      "downloads_rank": 407,
+      "source_sha256": "ddcec3d12c579d40898fe0a9a358a803c23e9c52ca3c425707f81c9436211837",
+      "target_count": 54,
+      "targets": [
+        {
+          "api": "bitvec::boxed::BitBox::as_raw_mut_slice",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bitvec::boxed::BitBox::as_raw_slice",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bitvec::boxed::BitBox::fill_uninitialized",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bitvec::boxed::BitBox::into_bitvec",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bitvec::boxed::BitBox::into_boxed_slice",
+          "source_file": "src/boxed.rs"
+        },
+        {
+          "api": "bitvec::domain::PartialElement::into_bitslice",
+          "source_file": "src/domain.rs"
+        },
+        {
+          "api": "bitvec::index::BitEnd::new",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitEnd::range_from",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitIdx::new",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitIdx::next",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitIdx::prev",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitIdx::range",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitPos::new",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitPos::select",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::index::BitSel::new",
+          "source_file": "src/index.rs"
+        },
+        {
+          "api": "bitvec::order::Lsb0::at",
+          "source_file": "src/order.rs"
+        },
+        {
+          "api": "bitvec::order::Lsb0::select",
+          "source_file": "src/order.rs"
+        },
+        {
+          "api": "bitvec::order::Msb0::at",
+          "source_file": "src/order.rs"
+        },
+        {
+          "api": "bitvec::order::Msb0::select",
+          "source_file": "src/order.rs"
+        },
+        {
+          "api": "bitvec::order::verify_for_type",
+          "source_file": "src/order.rs"
+        },
+        {
+          "api": "bitvec::ptr::copy",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::copy_nonoverlapping",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::read",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::read_unaligned",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::read_volatile",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::replace",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::swap",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::swap_nonoverlapping",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::write",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::write_bits",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::write_unaligned",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::ptr::write_volatile",
+          "source_file": "src/ptr.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::clone_from_bitslice",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::copy_from_bitslice",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::copy_within_unchecked",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::for_each",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::replace_unchecked",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::set_aliased_unchecked",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::shift_end",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::shift_start",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::split_at_unchecked",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::split_at_unchecked_mut",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::swap_unchecked",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::swap_with_bitslice",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::slice::BitSlice::to_bitvec",
+          "source_file": "src/slice.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::as_raw_mut_slice",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::as_raw_slice",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::extend_from_bitslice",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::force_align",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::from_bitslice",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::into_boxed_bitslice",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::into_vec",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::repeat",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "bitvec::vec::BitVec::set_uninitialized",
+          "source_file": "src/vec.rs"
+        }
+      ]
+    },
+    {
+      "name": "rkyv",
+      "version": "0.8.18",
+      "downloads_rank": 633,
+      "source_sha256": "d9776093b7ca170454ab1406954f7b7d97a57c51dc6c0642957fb2ef25c2d399",
+      "target_count": 50,
+      "targets": [
+        {
+          "api": "rkyv::api::access_pos_unchecked",
+          "source_file": "src/api/mod.rs"
+        },
+        {
+          "api": "rkyv::api::access_pos_unchecked_mut",
+          "source_file": "src/api/mod.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::index_map::ArchivedIndexMap::serialize_from_iter",
+          "source_file": "src/collections/swiss_table/index_map.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::map::Iter::next",
+          "source_file": "src/collections/swiss_table/map.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::map::IterMut::next",
+          "source_file": "src/collections/swiss_table/map.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::map::Keys::next",
+          "source_file": "src/collections/swiss_table/map.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::map::Values::next",
+          "source_file": "src/collections/swiss_table/map.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::map::ValuesMut::next",
+          "source_file": "src/collections/swiss_table/map.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::table::ArchivedHashTable::get_seal_with",
+          "source_file": "src/collections/swiss_table/table.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::table::ArchivedHashTable::get_with",
+          "source_file": "src/collections/swiss_table/table.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::table::ArchivedHashTable::raw_iter",
+          "source_file": "src/collections/swiss_table/table.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::table::ArchivedHashTable::raw_iter_seal",
+          "source_file": "src/collections/swiss_table/table.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::table::ArchivedHashTable::serialize_from_iter",
+          "source_file": "src/collections/swiss_table/table.rs"
+        },
+        {
+          "api": "rkyv::collections::swiss_table::table::RawIter::next",
+          "source_file": "src/collections/swiss_table/table.rs"
+        },
+        {
+          "api": "rkyv::de::pooling::PoolingExt::deserialize_shared",
+          "source_file": "src/de/pooling/mod.rs"
+        },
+        {
+          "api": "rkyv::erased::ErasedPtr::downcast_unchecked",
+          "source_file": "src/erased.rs"
+        },
+        {
+          "api": "rkyv::erased::Metadata::from",
+          "source_file": "src/erased.rs"
+        },
+        {
+          "api": "rkyv::hash::FxHasher64::write_u128",
+          "source_file": "src/hash.rs"
+        },
+        {
+          "api": "rkyv::net::ArchivedIpv4Addr::emplace",
+          "source_file": "src/net.rs"
+        },
+        {
+          "api": "rkyv::net::ArchivedIpv6Addr::emplace",
+          "source_file": "src/net.rs"
+        },
+        {
+          "api": "rkyv::niche::niched_option::NichedOption::as_mut",
+          "source_file": "src/niche/niched_option.rs"
+        },
+        {
+          "api": "rkyv::niche::niched_option::NichedOption::as_ref",
+          "source_file": "src/niche/niched_option.rs"
+        },
+        {
+          "api": "rkyv::niche::option_box::ArchivedOptionBox::resolve_from_option",
+          "source_file": "src/niche/option_box.rs"
+        },
+        {
+          "api": "rkyv::place::Place::as_slice",
+          "source_file": "src/place.rs"
+        },
+        {
+          "api": "rkyv::place::Place::from_field_unchecked",
+          "source_file": "src/place.rs"
+        },
+        {
+          "api": "rkyv::place::Place::index",
+          "source_file": "src/place.rs"
+        },
+        {
+          "api": "rkyv::place::Place::new_unchecked",
+          "source_file": "src/place.rs"
+        },
+        {
+          "api": "rkyv::place::Place::write_unchecked",
+          "source_file": "src/place.rs"
+        },
+        {
+          "api": "rkyv::rc::ArchivedRc::get_seal_unchecked",
+          "source_file": "src/rc.rs"
+        },
+        {
+          "api": "rkyv::rel_ptr::RawRelPtr::as_ptr_raw",
+          "source_file": "src/rel_ptr.rs"
+        },
+        {
+          "api": "rkyv::rel_ptr::RawRelPtr::offset_raw",
+          "source_file": "src/rel_ptr.rs"
+        },
+        {
+          "api": "rkyv::rel_ptr::RelPtr::as_mut_ptr",
+          "source_file": "src/rel_ptr.rs"
+        },
+        {
+          "api": "rkyv::rel_ptr::RelPtr::as_ptr",
+          "source_file": "src/rel_ptr.rs"
+        },
+        {
+          "api": "rkyv::rel_ptr::RelPtr::as_ptr_raw",
+          "source_file": "src/rel_ptr.rs"
+        },
+        {
+          "api": "rkyv::rel_ptr::RelPtr::as_ptr_wrapping_raw",
+          "source_file": "src/rel_ptr.rs"
+        },
+        {
+          "api": "rkyv::seal::Seal::restructure",
+          "source_file": "src/seal.rs"
+        },
+        {
+          "api": "rkyv::ser::writer::WriterExt::resolve_aligned",
+          "source_file": "src/ser/writer/mod.rs"
+        },
+        {
+          "api": "rkyv::ser::writer::WriterExt::resolve_unsized_aligned",
+          "source_file": "src/ser/writer/mod.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::as_bytes",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::as_bytes_seal",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::as_mut_ptr",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::as_ptr",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::as_str",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::as_str_seal",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::emplace_inline",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::string::repr::ArchivedStringRepr::try_emplace_out_of_line",
+          "source_file": "src/string/repr.rs"
+        },
+        {
+          "api": "rkyv::time::ArchivedDuration::emplace",
+          "source_file": "src/time.rs"
+        },
+        {
+          "api": "rkyv::vec::ArchivedVec::as_slice",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "rkyv::vec::ArchivedVec::as_slice_seal",
+          "source_file": "src/vec.rs"
+        },
+        {
+          "api": "rkyv::with::With::cast",
+          "source_file": "src/with.rs"
+        }
+      ]
+    },
+    {
+      "name": "slotmap",
+      "version": "1.1.1",
+      "downloads_rank": 829,
+      "source_sha256": "bdd58c3c93c3d278ca835519292445cb4b0d4dc59ccfdf7ceadaab3f8aeb4038",
+      "target_count": 43,
+      "targets": [
+        {
+          "api": "slotmap::basic::Drain::next",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::IntoIter::next",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::SlotMap::detach",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::SlotMap::get_disjoint_mut",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::SlotMap::get_disjoint_unchecked_mut",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::SlotMap::get_unchecked",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::SlotMap::get_unchecked_mut",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::SlotMap::retain",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::basic::SlotMap::try_insert_with_key",
+          "source_file": "src/basic.rs"
+        },
+        {
+          "api": "slotmap::dense::DenseSlotMap::get",
+          "source_file": "src/dense.rs"
+        },
+        {
+          "api": "slotmap::dense::DenseSlotMap::get_disjoint_mut",
+          "source_file": "src/dense.rs"
+        },
+        {
+          "api": "slotmap::dense::DenseSlotMap::get_disjoint_unchecked_mut",
+          "source_file": "src/dense.rs"
+        },
+        {
+          "api": "slotmap::dense::DenseSlotMap::get_mut",
+          "source_file": "src/dense.rs"
+        },
+        {
+          "api": "slotmap::dense::DenseSlotMap::get_unchecked",
+          "source_file": "src/dense.rs"
+        },
+        {
+          "api": "slotmap::dense::DenseSlotMap::get_unchecked_mut",
+          "source_file": "src/dense.rs"
+        },
+        {
+          "api": "slotmap::hop::Drain::next",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::drain",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::get_disjoint_mut",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::get_disjoint_unchecked_mut",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::get_unchecked",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::get_unchecked_mut",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::iter",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::retain",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::HopSlotMap::try_insert_with_key",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::IntoIter::next",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::hop::Iter::next",
+          "source_file": "src/hop.rs"
+        },
+        {
+          "api": "slotmap::secondary::OccupiedEntry::get",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::OccupiedEntry::get_mut",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::OccupiedEntry::into_mut",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::OccupiedEntry::remove",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::entry",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::get",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::get_disjoint_mut",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::get_disjoint_unchecked_mut",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::get_mut",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::get_unchecked",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::get_unchecked_mut",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::SecondaryMap::insert",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::secondary::VacantEntry::insert",
+          "source_file": "src/secondary.rs"
+        },
+        {
+          "api": "slotmap::sparse_secondary::SparseSecondaryMap::get_disjoint_mut",
+          "source_file": "src/sparse_secondary.rs"
+        },
+        {
+          "api": "slotmap::sparse_secondary::SparseSecondaryMap::get_disjoint_unchecked_mut",
+          "source_file": "src/sparse_secondary.rs"
+        },
+        {
+          "api": "slotmap::sparse_secondary::SparseSecondaryMap::get_unchecked",
+          "source_file": "src/sparse_secondary.rs"
+        },
+        {
+          "api": "slotmap::sparse_secondary::SparseSecondaryMap::get_unchecked_mut",
+          "source_file": "src/sparse_secondary.rs"
+        }
+      ]
+    },
+    {
+      "name": "memchr",
+      "version": "2.8.3",
+      "downloads_rank": 18,
+      "source_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+      "target_count": 41,
+      "targets": [
+        {
+          "api": "memchr::arch::aarch64::neon::memchr::One::count",
+          "source_file": "src/arch/aarch64/neon/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::aarch64::neon::memchr::One::new",
+          "source_file": "src/arch/aarch64/neon/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::aarch64::neon::memchr::One::new_unchecked",
+          "source_file": "src/arch/aarch64/neon/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::aarch64::neon::memchr::Three::new",
+          "source_file": "src/arch/aarch64/neon/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::aarch64::neon::memchr::Three::new_unchecked",
+          "source_file": "src/arch/aarch64/neon/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::aarch64::neon::memchr::Two::new",
+          "source_file": "src/arch/aarch64/neon/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::aarch64::neon::memchr::Two::new_unchecked",
+          "source_file": "src/arch/aarch64/neon/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::is_equal_raw",
+          "source_file": "src/arch/all/mod.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::One::count",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::One::count_raw",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::One::find_raw",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::One::rfind_raw",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::Three::find_raw",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::Three::rfind_raw",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::Two::find_raw",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::memchr::Two::rfind_raw",
+          "source_file": "src/arch/all/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::all::rabinkarp::Finder::find",
+          "source_file": "src/arch/all/rabinkarp.rs"
+        },
+        {
+          "api": "memchr::arch::all::rabinkarp::Finder::find_raw",
+          "source_file": "src/arch/all/rabinkarp.rs"
+        },
+        {
+          "api": "memchr::arch::all::rabinkarp::FinderRev::rfind",
+          "source_file": "src/arch/all/rabinkarp.rs"
+        },
+        {
+          "api": "memchr::arch::all::rabinkarp::FinderRev::rfind_raw",
+          "source_file": "src/arch/all/rabinkarp.rs"
+        },
+        {
+          "api": "memchr::arch::wasm32::simd128::memchr::One::count",
+          "source_file": "src/arch/wasm32/simd128/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::wasm32::simd128::memchr::One::new",
+          "source_file": "src/arch/wasm32/simd128/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::wasm32::simd128::memchr::One::new_unchecked",
+          "source_file": "src/arch/wasm32/simd128/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::wasm32::simd128::memchr::Three::new",
+          "source_file": "src/arch/wasm32/simd128/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::wasm32::simd128::memchr::Three::new_unchecked",
+          "source_file": "src/arch/wasm32/simd128/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::wasm32::simd128::memchr::Two::new",
+          "source_file": "src/arch/wasm32/simd128/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::wasm32::simd128::memchr::Two::new_unchecked",
+          "source_file": "src/arch/wasm32/simd128/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::avx2::memchr::One::count",
+          "source_file": "src/arch/x86_64/avx2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::avx2::memchr::One::new",
+          "source_file": "src/arch/x86_64/avx2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::avx2::memchr::One::new_unchecked",
+          "source_file": "src/arch/x86_64/avx2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::avx2::memchr::Three::new",
+          "source_file": "src/arch/x86_64/avx2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::avx2::memchr::Three::new_unchecked",
+          "source_file": "src/arch/x86_64/avx2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::avx2::memchr::Two::new",
+          "source_file": "src/arch/x86_64/avx2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::avx2::memchr::Two::new_unchecked",
+          "source_file": "src/arch/x86_64/avx2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::sse2::memchr::One::count",
+          "source_file": "src/arch/x86_64/sse2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::sse2::memchr::One::new",
+          "source_file": "src/arch/x86_64/sse2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::sse2::memchr::One::new_unchecked",
+          "source_file": "src/arch/x86_64/sse2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::sse2::memchr::Three::new",
+          "source_file": "src/arch/x86_64/sse2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::sse2::memchr::Three::new_unchecked",
+          "source_file": "src/arch/x86_64/sse2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::sse2::memchr::Two::new",
+          "source_file": "src/arch/x86_64/sse2/memchr.rs"
+        },
+        {
+          "api": "memchr::arch::x86_64::sse2::memchr::Two::new_unchecked",
+          "source_file": "src/arch/x86_64/sse2/memchr.rs"
+        }
+      ]
+    },
+    {
+      "name": "smallvec",
+      "version": "1.16.2",
+      "downloads_rank": 32,
+      "source_sha256": "f9395f0f0eee849a9b707b2f06bb92a6a422090e2123bb2ef8e87a0e61892a8e",
+      "target_count": 40,
+      "targets": [
+        {
+          "api": "smallvec::Drain::drop",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::Drain::next",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::Drain::next_back",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::DrainFilter::drop",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::DrainFilter::keep_rest",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::DrainFilter::next",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::IntoIter::as_mut_slice",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::IntoIter::as_slice",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::IntoIter::next",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::IntoIter::next_back",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::borrow_decode",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::decode",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::dedup_by",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::deref",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::deref_mut",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::drain",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::drain_filter",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::drop",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::encode",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::extend",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::from_buf_and_len",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::from_const_with_len_unchecked",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::from_elem",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::from_raw_parts",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::from_slice",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::from_vec",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::insert",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::insert_from_slice",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::insert_many",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::into_inner",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::into_iter",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::into_vec",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::pop",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::push",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::remove",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::retain",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::shrink_to_fit",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::swap_remove",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::truncate",
+          "source_file": "src/lib.rs"
+        },
+        {
+          "api": "smallvec::SmallVec::try_grow",
+          "source_file": "src/lib.rs"
+        }
+      ]
+    },
+    {
+      "name": "pyo3",
+      "version": "0.29.2",
+      "downloads_rank": 446,
+      "source_sha256": "4688ddedf473e32662b9b067670129a8afb8c18e351482c70d62ba4a88171e8b",
+      "target_count": 35,
+      "targets": [
+        {
+          "api": "pyo3::buffer::PyBuffer::as_fortran_mut_slice",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyBuffer::as_fortran_slice",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyBuffer::as_mut_slice",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyBuffer::as_slice",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::as_typed",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::format",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::get",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::obj",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::release",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::shape",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::strides",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::buffer::PyUntypedBuffer::suboffsets",
+          "source_file": "src/buffer.rs"
+        },
+        {
+          "api": "pyo3::impl_::extract_argument::FunctionDescription::extract_arguments_fastcall",
+          "source_file": "src/impl_/extract_argument.rs"
+        },
+        {
+          "api": "pyo3::impl_::extract_argument::FunctionDescription::extract_arguments_tuple_dict",
+          "source_file": "src/impl_/extract_argument.rs"
+        },
+        {
+          "api": "pyo3::impl_::extract_argument::cast_non_null_function_argument",
+          "source_file": "src/impl_/extract_argument.rs"
+        },
+        {
+          "api": "pyo3::impl_::extract_argument::unwrap_required_argument",
+          "source_file": "src/impl_/extract_argument.rs"
+        },
+        {
+          "api": "pyo3::impl_::extract_argument::unwrap_required_argument_bound",
+          "source_file": "src/impl_/extract_argument.rs"
+        },
+        {
+          "api": "pyo3::impl_::pyclass::alloc_with_freelist",
+          "source_file": "src/impl_/pyclass.rs"
+        },
+        {
+          "api": "pyo3::impl_::pyclass::free_with_freelist",
+          "source_file": "src/impl_/pyclass.rs"
+        },
+        {
+          "api": "pyo3::impl_::pyfunction::create_py_c_function",
+          "source_file": "src/impl_/pyfunction.rs"
+        },
+        {
+          "api": "pyo3::impl_::pymethods::_call_traverse",
+          "source_file": "src/impl_/pymethods.rs"
+        },
+        {
+          "api": "pyo3::impl_::pymodule::ModuleDef::make_module",
+          "source_file": "src/impl_/pymodule.rs"
+        },
+        {
+          "api": "pyo3::marker::Python::detach",
+          "source_file": "src/marker.rs"
+        },
+        {
+          "api": "pyo3::marker::Python::version_str",
+          "source_file": "src/marker.rs"
+        },
+        {
+          "api": "pyo3::pybacked::PyBackedBytes::deref",
+          "source_file": "src/pybacked.rs"
+        },
+        {
+          "api": "pyo3::pybacked::PyBackedStr::as_str",
+          "source_file": "src/pybacked.rs"
+        },
+        {
+          "api": "pyo3::pybacked::PyBackedStr::try_from",
+          "source_file": "src/pybacked.rs"
+        },
+        {
+          "api": "pyo3::pycell::PyRef::as_super",
+          "source_file": "src/pycell.rs"
+        },
+        {
+          "api": "pyo3::pycell::PyRef::into_super",
+          "source_file": "src/pycell.rs"
+        },
+        {
+          "api": "pyo3::pycell::PyRefMut::as_super",
+          "source_file": "src/pycell.rs"
+        },
+        {
+          "api": "pyo3::pycell::PyRefMut::into_super",
+          "source_file": "src/pycell.rs"
+        },
+        {
+          "api": "pyo3::sync::critical_section::with_critical_section",
+          "source_file": "src/sync/critical_section.rs"
+        },
+        {
+          "api": "pyo3::sync::critical_section::with_critical_section2",
+          "source_file": "src/sync/critical_section.rs"
+        },
+        {
+          "api": "pyo3::sync::critical_section::with_critical_section_mutex",
+          "source_file": "src/sync/critical_section.rs"
+        },
+        {
+          "api": "pyo3::sync::critical_section::with_critical_section_mutex2",
+          "source_file": "src/sync/critical_section.rs"
+        }
+      ]
+    }
+  ]
+}

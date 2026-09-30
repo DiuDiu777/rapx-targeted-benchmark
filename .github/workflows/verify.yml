@@ -82,6 +82,7 @@ jobs:
             --name "${{ matrix.name }}" \
             --version "${{ matrix.version }}" \
             --declared-targets "${{ matrix.targets }}" \
+            --manifest targets.json \
             --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
             --toolchain "${{ needs.setup.outputs.toolchain }}" \
             --timeout-minutes "${{ inputs.timeout_minutes }}" \

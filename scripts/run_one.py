@@ -16,21 +16,52 @@ from pathlib import Path
 ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 HEADER = re.compile(r"\[rapx::verify\]\s*(?:function:|sequence:|unsafe impl)\s*(.+)")
 RESULT = re.compile(r"\b(?:result|verdict):\s*(SOUND|UNSOUND|UNKNOWN|SAFE|UNSAFE)\b")
-TOTAL = re.compile(
-    r"\[rapx::verify\]\s*total:\s*(\d+)\s+free function\(s\),\s*"
-    r"(\d+)\s+method\(s\)"
-)
+VERDICT_PRIORITY = {"SOUND": 0, "UNKNOWN": 1, "UNSOUND": 2}
 
 
-def parse_log(text: str, declared_targets: int) -> dict:
+def _without_generics(path: str) -> str:
+    """Remove Rust generic arguments while preserving a callable's path."""
+    output = []
+    depth = 0
+    for char in path:
+        if char == "<":
+            if depth == 0 and len(output) >= 2 and output[-2:] == [":", ":"]:
+                del output[-2:]
+            depth += 1
+        elif char == ">" and depth:
+            depth -= 1
+        elif depth == 0:
+            output.append(char)
+    return "".join(output)
+
+
+def canonical_target(label: str, crate_name: str) -> str:
+    """Normalize RAPx/rustc labels to the API paths stored in targets.json."""
+    label = label.strip()
+
+    # rustc prints trait methods as `<Type as Trait>::method`.
+    trait_method = re.match(r"^<(.+?)\s+as\s+.+>::([^:]+)$", label)
+    if trait_method:
+        label = f"{trait_method.group(1)}::{trait_method.group(2)}"
+    else:
+        # Some generated impl modules use `::<impl Trait for Type>::method`.
+        impl_method = re.match(r"^.*?::<impl\s+.+\s+for\s+(.+)>::([^:]+)$", label)
+        if impl_method:
+            label = f"{impl_method.group(1)}::{impl_method.group(2)}"
+
+    label = _without_generics(label)
+    label = re.sub(r"\s+", "", label)
+    prefix = crate_name + "::"
+    if label.startswith(prefix):
+        label = label[len(prefix):]
+    return label
+
+
+def parse_log(text: str, intended_targets: list[str], crate_name: str) -> dict:
     clean = ANSI.sub("", text)
     records = []
     current = None
-    active_targets = None
     for line in clean.splitlines():
-        total = TOTAL.search(line)
-        if total:
-            active_targets = int(total.group(1)) + int(total.group(2))
         header = HEADER.search(line)
         if header:
             if current is not None:
@@ -47,13 +78,28 @@ def parse_log(text: str, declared_targets: int) -> dict:
     if current is not None:
         records.append((current, "UNKNOWN"))
 
-    counts = Counter(verdict for _, verdict in records)
-    denominator = active_targets if active_targets is not None else declared_targets
-    denominator = max(denominator, len(records))
-    counts["NOT_RUN"] = max(0, denominator - len(records))
+    intended = {
+        canonical_target(target, crate_name): target for target in intended_targets
+    }
+    matched = {}
+    ignored = []
+    for label, verdict in records:
+        normalized = canonical_target(label, crate_name)
+        if normalized not in intended:
+            ignored.append(label)
+            continue
+        previous = matched.get(normalized)
+        if previous is None or VERDICT_PRIORITY[verdict] > VERDICT_PRIORITY[previous]:
+            matched[normalized] = verdict
+
+    counts = Counter(matched.values())
+    counts["NOT_RUN"] = len(intended) - len(matched)
     return {
-        "active_targets": denominator,
-        "observed_targets": len(records),
+        "active_targets": len(intended),
+        "observed_targets": len(matched),
+        "observed_log_records": len(records),
+        "ignored_log_records": len(ignored),
+        "ignored_log_targets": ignored,
         "counts": {key: counts[key] for key in ("SOUND", "UNSOUND", "UNKNOWN", "NOT_RUN")},
     }
 
@@ -70,6 +116,7 @@ def main() -> None:
     parser.add_argument("--name", required=True)
     parser.add_argument("--version", required=True)
     parser.add_argument("--declared-targets", required=True, type=int)
+    parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--rapx-version", required=True)
     parser.add_argument("--toolchain", required=True)
     parser.add_argument("--timeout-minutes", type=int, default=330)
@@ -125,7 +172,21 @@ def main() -> None:
                 process.wait()
             exit_code = process.returncode
 
-    parsed = parse_log(log_path.read_text(errors="replace"), args.declared_targets)
+    manifest = json.loads(args.manifest.read_text())
+    crate_manifest = next(
+        item
+        for item in manifest["crates"]
+        if item["name"] == args.name and item["version"] == args.version
+    )
+    intended_targets = [item["api"] for item in crate_manifest["targets"]]
+    if len(intended_targets) != args.declared_targets:
+        raise ValueError(
+            f"manifest count mismatch for {args.name}: "
+            f"{len(intended_targets)} != {args.declared_targets}"
+        )
+    parsed = parse_log(
+        log_path.read_text(errors="replace"), intended_targets, args.name
+    )
     counts = parsed["counts"]
     total = parsed["active_targets"]
     if timed_out:
@@ -146,6 +207,9 @@ def main() -> None:
         "active_targets": total,
         "counts": counts,
         "percentages": percentages(counts, total),
+        "observed_log_records": parsed["observed_log_records"],
+        "ignored_log_records": parsed["ignored_log_records"],
+        "ignored_log_targets": parsed["ignored_log_targets"],
         "exit_code": exit_code,
         "timed_out": timed_out,
         "seconds": round(time.monotonic() - started, 2),

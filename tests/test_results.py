@@ -15,20 +15,44 @@ RESOLVER_SPEC.loader.exec_module(resolve_rapx)
 
 
 class ParseResultsTest(unittest.TestCase):
-    def test_counts_finished_unknown_and_not_run(self):
+    def test_counts_only_manifest_targets_and_aggregates_overloads(self):
         log = """
-        00|RAPx|INFO|: [rapx::verify] total: 1 free function(s), 3 method(s), 0 struct(s), 0 trait(s)
-        00|RAPx|INFO|: [rapx::verify] function: one
+        00|RAPx|INFO|: [rapx::verify] function: api::one
         00|RAPx|INFO|: result: SOUND
-        00|RAPx|INFO|: [rapx::verify] function: two
+        00|RAPx|INFO|: [rapx::verify] function: <api::Thing<T> as Trait>::two
+        00|RAPx|INFO|: result: SOUND
+        00|RAPx|INFO|: [rapx::verify] function: <api::Thing<T> as OtherTrait>::two
         00|RAPx|WARN|: result: UNSOUND
-        00|RAPx|INFO|: [rapx::verify] function: three
+        00|RAPx|INFO|: [rapx::verify] function: internal::Unmarked::drop
+        00|RAPx|INFO|: result: SOUND
         """
-        result = run_one.parse_log(log, 10)
-        self.assertEqual(result["active_targets"], 4)
+        result = run_one.parse_log(
+            log,
+            ["demo::api::one", "demo::api::Thing::two", "demo::api::three"],
+            "demo",
+        )
+        self.assertEqual(result["active_targets"], 3)
+        self.assertEqual(result["observed_targets"], 2)
+        self.assertEqual(result["observed_log_records"], 4)
+        self.assertEqual(result["ignored_log_records"], 1)
         self.assertEqual(
             result["counts"],
-            {"SOUND": 1, "UNSOUND": 1, "UNKNOWN": 1, "NOT_RUN": 1},
+            {"SOUND": 1, "UNSOUND": 1, "UNKNOWN": 0, "NOT_RUN": 1},
+        )
+
+    def test_normalizes_generated_impl_and_turbofish(self):
+        self.assertEqual(
+            run_one.canonical_target(
+                "boxed::ops::<impl std::ops::Drop for boxed::BitBox<T, O>>::drop",
+                "bitvec",
+            ),
+            "boxed::BitBox::drop",
+        )
+        self.assertEqual(
+            run_one.canonical_target(
+                "rkyv::place::Place::<T: MetaSized>::write_unchecked", "rkyv"
+            ),
+            "place::Place::write_unchecked",
         )
 
     def test_release_time_nightly_is_pinned(self):

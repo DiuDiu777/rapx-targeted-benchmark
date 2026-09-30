@@ -51,9 +51,11 @@ def canonical_target(label: str, crate_name: str) -> str:
 
     label = _without_generics(label)
     label = re.sub(r"\s+", "", label)
-    prefix = crate_name + "::"
-    if label.startswith(prefix):
-        label = label[len(prefix):]
+    for crate_prefix in (crate_name, crate_name.replace("-", "_")):
+        prefix = crate_prefix + "::"
+        if label.startswith(prefix):
+            label = label[len(prefix):]
+            break
     return label
 
 

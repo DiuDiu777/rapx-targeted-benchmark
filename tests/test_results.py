@@ -54,6 +54,12 @@ class ParseResultsTest(unittest.TestCase):
             ),
             "place::Place::write_unchecked",
         )
+        self.assertEqual(
+            run_one.canonical_target(
+                "allocator_api2::boxed::Box::<T>::from_raw", "allocator-api2"
+            ),
+            "boxed::Box::from_raw",
+        )
 
     def test_release_time_nightly_is_pinned(self):
         data = {

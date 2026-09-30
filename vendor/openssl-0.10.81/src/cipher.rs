@@ -525,25 +525,21 @@ impl Cipher {
         unsafe { CipherRef::from_ptr(ffi::EVP_cast5_ofb() as *mut _) }
     }
 
-    #[rapx::verify]
     #[cfg(not(osslconf = "OPENSSL_NO_IDEA"))]
     pub fn idea_cfb64() -> &'static CipherRef {
         unsafe { CipherRef::from_ptr(ffi::EVP_idea_cfb64() as *mut _) }
     }
 
-    #[rapx::verify]
     #[cfg(not(osslconf = "OPENSSL_NO_IDEA"))]
     pub fn idea_ecb() -> &'static CipherRef {
         unsafe { CipherRef::from_ptr(ffi::EVP_idea_ecb() as *mut _) }
     }
 
-    #[rapx::verify]
     #[cfg(not(osslconf = "OPENSSL_NO_IDEA"))]
     pub fn idea_cbc() -> &'static CipherRef {
         unsafe { CipherRef::from_ptr(ffi::EVP_idea_cbc() as *mut _) }
     }
 
-    #[rapx::verify]
     #[cfg(not(osslconf = "OPENSSL_NO_IDEA"))]
     pub fn idea_ofb() -> &'static CipherRef {
         unsafe { CipherRef::from_ptr(ffi::EVP_idea_ofb() as *mut _) }

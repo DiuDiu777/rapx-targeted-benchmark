@@ -29,7 +29,6 @@ use crate::{arch::generic::memchr as generic, ext::Pointer, vector::Vector};
 pub struct One(generic::One<v128>);
 
 impl One {
-    #[rapx::verify]
     /// Create a new searcher that finds occurrences of the needle byte given.
     ///
     /// This particular searcher is specialized to use simd128 vector
@@ -47,7 +46,6 @@ impl One {
         }
     }
 
-    #[rapx::verify]
     /// Create a new finder specific to simd128 vectors and routines without
     /// checking that simd128 is available.
     ///
@@ -114,7 +112,6 @@ impl One {
         }
     }
 
-    #[rapx::verify]
     /// Counts all occurrences of this byte in the given haystack.
     #[inline]
     pub fn count(&self, haystack: &[u8]) -> usize {
@@ -391,7 +388,6 @@ impl<'a, 'h> core::iter::FusedIterator for OneIter<'a, 'h> {}
 pub struct Two(generic::Two<v128>);
 
 impl Two {
-    #[rapx::verify]
     /// Create a new searcher that finds occurrences of the needle bytes given.
     ///
     /// This particular searcher is specialized to use simd128 vector
@@ -409,7 +405,6 @@ impl Two {
         }
     }
 
-    #[rapx::verify]
     /// Create a new finder specific to simd128 vectors and routines without
     /// checking that simd128 is available.
     ///
@@ -670,7 +665,6 @@ impl<'a, 'h> core::iter::FusedIterator for TwoIter<'a, 'h> {}
 pub struct Three(generic::Three<v128>);
 
 impl Three {
-    #[rapx::verify]
     /// Create a new searcher that finds occurrences of the needle bytes given.
     ///
     /// This particular searcher is specialized to use simd128 vector
@@ -688,7 +682,6 @@ impl Three {
         }
     }
 
-    #[rapx::verify]
     /// Create a new finder specific to simd128 vectors and routines without
     /// checking that simd128 is available.
     ///

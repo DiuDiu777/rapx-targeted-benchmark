@@ -5,8 +5,10 @@ This repository contains the 10 crates with the most public targets in the
 is annotated with `#[rapx::verify]`.
 
 The **Targeted RAPx verify** workflow has only `workflow_dispatch`; run it from
-the Actions page whenever a measurement is needed. Every run resolves and
-installs the newest non-yanked `rapx` release from crates.io, then runs:
+the Actions page whenever a measurement is needed. The form has separate
+timeouts for ordinary crates and `smallvec`; their defaults are 15 and 120
+minutes respectively. Every run resolves and installs the newest non-yanked
+`rapx` release from crates.io, then runs:
 
 ```text
 cargo +nightly rapx verify --mode targeted --postfix-repeat auto
@@ -34,3 +36,18 @@ before starting the 10 verification jobs.
 archive checksums, and historical download ranks. Some API paths have more than
 one source annotation behind mutually exclusive `cfg` branches; they still
 count as one manifest target.
+
+## Results
+
+The repository's `results/` directory is intentionally ignored because a
+GitHub-hosted runner has an ephemeral filesystem. Results are attached to each
+workflow run instead:
+
+- `targeted-summary` contains `summary.md` and `summary.json` and is retained
+  for 90 days.
+- Each `result-<crate>-<version>` artifact contains that crate's `result.json`
+  and full `rapx.log` and is retained for 30 days.
+
+Open a completed workflow run and download these files from the **Artifacts**
+section at the bottom of its Summary page. The compact table is also rendered
+directly in the run's job summary.

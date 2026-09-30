@@ -4,9 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       timeout_minutes:
-        description: Per-crate timeout in minutes
+        description: Timeout for each crate except smallvec (minutes)
         required: true
-        default: "330"
+        default: "15"
+      smallvec_timeout_minutes:
+        description: Timeout for smallvec (minutes)
+        required: true
+        default: "120"
 
 permissions:
   contents: read
@@ -85,7 +89,7 @@ jobs:
             --manifest targets.json \
             --rapx-version "${{ needs.setup.outputs.rapx_version }}" \
             --toolchain "${{ needs.setup.outputs.toolchain }}" \
-            --timeout-minutes "${{ inputs.timeout_minutes }}" \
+            --timeout-minutes "${{ matrix.name == 'smallvec' && inputs.smallvec_timeout_minutes || inputs.timeout_minutes }}" \
             --output "results/${{ matrix.id }}"
       - uses: actions/upload-artifact@v4
         if: always()

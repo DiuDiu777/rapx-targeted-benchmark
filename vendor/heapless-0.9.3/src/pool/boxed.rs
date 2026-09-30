@@ -192,7 +192,6 @@ where
         addr_of_mut!(**b)
     }
 
-    #[rapx::verify]
     /// Constructs a `Box<P>` from a raw pointer
     ///
     /// # Safety
@@ -274,7 +273,6 @@ impl<P> Drop for Box<P>
 where
     P: BoxPool,
 {
-    #[rapx::verify]
     fn drop(&mut self) {
         let node = self.node_ptr;
 

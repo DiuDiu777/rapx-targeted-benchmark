@@ -172,7 +172,6 @@ impl<'a, T> Box<'a, T> {
         Box(a.alloc(x).into(), PhantomData).into()
     }
 
-    #[rapx::verify]
     /// Consumes the `Box`, returning the wrapped value.
     ///
     /// # Examples
@@ -193,7 +192,6 @@ impl<'a, T> Box<'a, T> {
 }
 
 impl<'a, T: ?Sized> Box<'a, T> {
-    #[rapx::verify]
     /// Constructs a box from a raw pointer.
     ///
     /// After calling this function, the raw pointer is owned by the
@@ -339,7 +337,6 @@ impl<'a, T: ?Sized> Box<'a, T> {
 }
 
 impl<'a, T: ?Sized> Drop for Box<'a, T> {
-    #[rapx::verify]
     fn drop(&mut self) {
         unsafe {
             // `Box` owns value of `T`, but not memory behind it.
@@ -349,7 +346,6 @@ impl<'a, T: ?Sized> Drop for Box<'a, T> {
 }
 
 impl<'a, T> Default for Box<'a, [T]> {
-    #[rapx::verify]
     fn default() -> Box<'a, [T]> {
         // It should be OK to `drop_in_place` empty slice of anything.
         Box(
@@ -360,7 +356,6 @@ impl<'a, T> Default for Box<'a, [T]> {
 }
 
 impl<'a> Default for Box<'a, str> {
-    #[rapx::verify]
     fn default() -> Box<'a, str> {
         // Empty slice is valid string.
         // It should be OK to `drop_in_place` empty str.
@@ -475,7 +470,6 @@ impl<'a, T: ?Sized> From<Box<'a, T>> for Pin<Box<'a, T>> {
 }
 
 impl<'a> Box<'a, dyn Any> {
-    #[rapx::verify]
     #[inline]
     /// Attempt to downcast the box to a concrete type.
     ///
@@ -507,7 +501,6 @@ impl<'a> Box<'a, dyn Any> {
 }
 
 impl<'a> Box<'a, dyn Any + Send> {
-    #[rapx::verify]
     #[inline]
     /// Attempt to downcast the box to a concrete type.
     ///
@@ -593,7 +586,6 @@ fn _doctest_only() {}
 impl<'a, T: ?Sized> Deref for Box<'a, T> {
     type Target = T;
 
-    #[rapx::verify]
     fn deref(&self) -> &T {
         // Safety: Our pointer always points to a valid instance of `T`
         // allocated within a `Bump` and the `&self` borrow ensures that there
@@ -603,7 +595,6 @@ impl<'a, T: ?Sized> Deref for Box<'a, T> {
 }
 
 impl<'a, T: ?Sized> DerefMut for Box<'a, T> {
-    #[rapx::verify]
     fn deref_mut(&mut self) -> &mut T {
         // Safety: Our pointer always points to a valid instance of `T`
         // allocated within a `Bump` and the `&mut self` borrow ensures that
@@ -718,7 +709,6 @@ impl<'a, F: ?Sized + Future + Unpin> Future for Box<'a, F> {
 
 /// This impl replaces unsize coercion.
 impl<'a, T, const N: usize> From<Box<'a, [T; N]>> for Box<'a, [T]> {
-    #[rapx::verify]
     fn from(arr: Box<'a, [T; N]>) -> Box<'a, [T]> {
         let mut arr = ManuallyDrop::new(arr);
         let ptr = core::ptr::slice_from_raw_parts_mut(arr.as_mut_ptr(), N);
@@ -729,7 +719,6 @@ impl<'a, T, const N: usize> From<Box<'a, [T; N]>> for Box<'a, [T]> {
 /// This impl replaces unsize coercion.
 impl<'a, T, const N: usize> TryFrom<Box<'a, [T]>> for Box<'a, [T; N]> {
     type Error = Box<'a, [T]>;
-    #[rapx::verify]
     fn try_from(slice: Box<'a, [T]>) -> Result<Box<'a, [T; N]>, Box<'a, [T]>> {
         if slice.len() == N {
             let mut slice = ManuallyDrop::new(slice);

@@ -7,7 +7,7 @@
       "version": "0.10.81",
       "downloads_rank": 313,
       "source_sha256": "77823a27f0babb03091cb9ed9ef80af3b39dbc82f97e8fa530374b7dafd87a45",
-      "target_count": 170,
+      "target_count": 166,
       "targets": [
         {
           "api": "openssl::aes::AesKey::new_decrypt",
@@ -311,22 +311,6 @@
         },
         {
           "api": "openssl::cipher::Cipher::from_nid",
-          "source_file": "src/cipher.rs"
-        },
-        {
-          "api": "openssl::cipher::Cipher::idea_cbc",
-          "source_file": "src/cipher.rs"
-        },
-        {
-          "api": "openssl::cipher::Cipher::idea_cfb64",
-          "source_file": "src/cipher.rs"
-        },
-        {
-          "api": "openssl::cipher::Cipher::idea_ecb",
-          "source_file": "src/cipher.rs"
-        },
-        {
-          "api": "openssl::cipher::Cipher::idea_ofb",
           "source_file": "src/cipher.rs"
         },
         {
@@ -696,7 +680,7 @@
       "version": "0.9.3",
       "downloads_rank": 689,
       "source_sha256": "25ba4bd83f9415b58b4ed8dc5714c76e626a105be4646c02630ad730ad3b5aa4",
-      "target_count": 77,
+      "target_count": 75,
       "targets": [
         {
           "api": "heapless::binary_heap::BinaryHeapInner::pop_unchecked",
@@ -867,14 +851,6 @@
           "source_file": "src/linear_map.rs"
         },
         {
-          "api": "heapless::pool::boxed::Box::drop",
-          "source_file": "src/pool/boxed.rs"
-        },
-        {
-          "api": "heapless::pool::boxed::Box::from_raw",
-          "source_file": "src/pool/boxed.rs"
-        },
-        {
           "api": "heapless::sorted_linked_list::SortedLinkedListInner::drop",
           "source_file": "src/sorted_linked_list.rs"
         },
@@ -1013,7 +989,7 @@
       "version": "3.20.3",
       "downloads_rank": 193,
       "source_sha256": "72f5acc6cb2ba439de613abc23857ec3d78374d8ed5ac84e9d11336e87da8649",
-      "target_count": 70,
+      "target_count": 17,
       "targets": [
         {
           "api": "bumpalo::Bump::alloc_slice_clone",
@@ -1082,218 +1058,6 @@
         {
           "api": "bumpalo::ChunkRawIter::next",
           "source_file": "src/lib.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::default",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::deref",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::deref_mut",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::downcast",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::drop",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::from",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::from_raw",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::into_inner",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::boxed::Box::try_from",
-          "source_file": "src/boxed.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::Drain::drop",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::deref",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::deref_mut",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::from_raw_parts_in",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::from_str_in",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::from_utf8_lossy_in",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::index",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::index_mut",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::into_bump_str",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::pop",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::remove",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::replace_range",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::retain",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::string::String::split_off",
-          "source_file": "src/collections/string.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Drain::drop",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Drain::next",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Drain::next_back",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::DrainFilter::drop",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::DrainFilter::next",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::IntoIter::as_mut_slice",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::IntoIter::as_slice",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::IntoIter::next",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::IntoIter::next_back",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::IntoIter::size_hint",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Splice::drop",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::append",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::as_mut_ptr",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::as_ptr",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::deref",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::deref_mut",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::drain",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::drain_filter",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::drop",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::from_raw_parts_in",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::insert",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::into_boxed_slice",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::into_bump_slice",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::into_bump_slice_mut",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::into_iter",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::pop",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::remove",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::split_off",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::swap_remove",
-          "source_file": "src/collections/vec.rs"
-        },
-        {
-          "api": "bumpalo::collections::vec::Vec::truncate",
-          "source_file": "src/collections/vec.rs"
         }
       ]
     },
@@ -1780,7 +1544,7 @@
       "version": "0.8.18",
       "downloads_rank": 633,
       "source_sha256": "d9776093b7ca170454ab1406954f7b7d97a57c51dc6c0642957fb2ef25c2d399",
-      "target_count": 50,
+      "target_count": 48,
       "targets": [
         {
           "api": "rkyv::api::access_pos_unchecked",
@@ -1907,10 +1671,6 @@
           "source_file": "src/rel_ptr.rs"
         },
         {
-          "api": "rkyv::rel_ptr::RelPtr::as_mut_ptr",
-          "source_file": "src/rel_ptr.rs"
-        },
-        {
           "api": "rkyv::rel_ptr::RelPtr::as_ptr",
           "source_file": "src/rel_ptr.rs"
         },
@@ -1960,10 +1720,6 @@
         },
         {
           "api": "rkyv::string::repr::ArchivedStringRepr::emplace_inline",
-          "source_file": "src/string/repr.rs"
-        },
-        {
-          "api": "rkyv::string::repr::ArchivedStringRepr::try_emplace_out_of_line",
           "source_file": "src/string/repr.rs"
         },
         {
@@ -2170,36 +1926,8 @@
       "version": "2.8.3",
       "downloads_rank": 18,
       "source_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
-      "target_count": 41,
+      "target_count": 27,
       "targets": [
-        {
-          "api": "memchr::arch::aarch64::neon::memchr::One::count",
-          "source_file": "src/arch/aarch64/neon/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::aarch64::neon::memchr::One::new",
-          "source_file": "src/arch/aarch64/neon/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::aarch64::neon::memchr::One::new_unchecked",
-          "source_file": "src/arch/aarch64/neon/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::aarch64::neon::memchr::Three::new",
-          "source_file": "src/arch/aarch64/neon/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::aarch64::neon::memchr::Three::new_unchecked",
-          "source_file": "src/arch/aarch64/neon/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::aarch64::neon::memchr::Two::new",
-          "source_file": "src/arch/aarch64/neon/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::aarch64::neon::memchr::Two::new_unchecked",
-          "source_file": "src/arch/aarch64/neon/memchr.rs"
-        },
         {
           "api": "memchr::arch::all::is_equal_raw",
           "source_file": "src/arch/all/mod.rs"
@@ -2251,34 +1979,6 @@
         {
           "api": "memchr::arch::all::rabinkarp::FinderRev::rfind_raw",
           "source_file": "src/arch/all/rabinkarp.rs"
-        },
-        {
-          "api": "memchr::arch::wasm32::simd128::memchr::One::count",
-          "source_file": "src/arch/wasm32/simd128/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::wasm32::simd128::memchr::One::new",
-          "source_file": "src/arch/wasm32/simd128/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::wasm32::simd128::memchr::One::new_unchecked",
-          "source_file": "src/arch/wasm32/simd128/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::wasm32::simd128::memchr::Three::new",
-          "source_file": "src/arch/wasm32/simd128/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::wasm32::simd128::memchr::Three::new_unchecked",
-          "source_file": "src/arch/wasm32/simd128/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::wasm32::simd128::memchr::Two::new",
-          "source_file": "src/arch/wasm32/simd128/memchr.rs"
-        },
-        {
-          "api": "memchr::arch::wasm32::simd128::memchr::Two::new_unchecked",
-          "source_file": "src/arch/wasm32/simd128/memchr.rs"
         },
         {
           "api": "memchr::arch::x86_64::avx2::memchr::One::count",
@@ -2512,7 +2212,7 @@
       "version": "0.29.2",
       "downloads_rank": 446,
       "source_sha256": "4688ddedf473e32662b9b067670129a8afb8c18e351482c70d62ba4a88171e8b",
-      "target_count": 35,
+      "target_count": 33,
       "targets": [
         {
           "api": "pyo3::buffer::PyBuffer::as_fortran_mut_slice",
@@ -2644,14 +2344,6 @@
         },
         {
           "api": "pyo3::sync::critical_section::with_critical_section2",
-          "source_file": "src/sync/critical_section.rs"
-        },
-        {
-          "api": "pyo3::sync::critical_section::with_critical_section_mutex",
-          "source_file": "src/sync/critical_section.rs"
-        },
-        {
-          "api": "pyo3::sync::critical_section::with_critical_section_mutex2",
           "source_file": "src/sync/critical_section.rs"
         }
       ]

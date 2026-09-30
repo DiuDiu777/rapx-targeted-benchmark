@@ -198,7 +198,6 @@ impl ArchivedStringRepr {
         }
     }
 
-    #[rapx::verify]
     /// Emplaces a new out-of-line representation for the given `str`.
     ///
     /// # Safety

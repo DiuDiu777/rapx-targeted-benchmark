@@ -29,7 +29,6 @@ use crate::{arch::generic::memchr as generic, ext::Pointer, vector::Vector};
 pub struct One(generic::One<uint8x16_t>);
 
 impl One {
-    #[rapx::verify]
     /// Create a new searcher that finds occurrences of the needle byte given.
     ///
     /// This particular searcher is specialized to use neon vector instructions
@@ -47,7 +46,6 @@ impl One {
         }
     }
 
-    #[rapx::verify]
     /// Create a new finder specific to neon vectors and routines without
     /// checking that neon is available.
     ///
@@ -119,7 +117,6 @@ impl One {
         }
     }
 
-    #[rapx::verify]
     /// Counts all occurrences of this byte in the given haystack.
     #[inline]
     pub fn count(&self, haystack: &[u8]) -> usize {
@@ -392,7 +389,6 @@ impl<'a, 'h> core::iter::FusedIterator for OneIter<'a, 'h> {}
 pub struct Two(generic::Two<uint8x16_t>);
 
 impl Two {
-    #[rapx::verify]
     /// Create a new searcher that finds occurrences of the needle bytes given.
     ///
     /// This particular searcher is specialized to use neon vector instructions
@@ -410,7 +406,6 @@ impl Two {
         }
     }
 
-    #[rapx::verify]
     /// Create a new finder specific to neon vectors and routines without
     /// checking that neon is available.
     ///
@@ -676,7 +671,6 @@ impl<'a, 'h> core::iter::FusedIterator for TwoIter<'a, 'h> {}
 pub struct Three(generic::Three<uint8x16_t>);
 
 impl Three {
-    #[rapx::verify]
     /// Create a new searcher that finds occurrences of the needle bytes given.
     ///
     /// This particular searcher is specialized to use neon vector instructions
@@ -694,7 +688,6 @@ impl Three {
         }
     }
 
-    #[rapx::verify]
     /// Create a new finder specific to neon vectors and routines without
     /// checking that neon is available.
     ///

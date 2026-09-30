@@ -607,7 +607,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         v
     }
 
-    #[rapx::verify]
     /// Creates a `Vec<'bump, T>` directly from the raw components of another vector.
     ///
     /// # Safety
@@ -840,7 +839,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         }
     }
 
-    #[rapx::verify]
     /// Converts the vector into `&'bump [T]`.
     ///
     /// # Examples
@@ -863,7 +861,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         }
     }
 
-    #[rapx::verify]
     /// Converts the vector into `&'bump mut [T]`.
     ///
     /// # Examples
@@ -889,7 +886,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         unsafe { slice::from_raw_parts_mut(ptr, len) }
     }
 
-    #[rapx::verify]
     /// Shortens the vector, keeping the first `len` elements and dropping
     /// the rest.
     ///
@@ -1002,7 +998,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         self
     }
 
-    #[rapx::verify]
     /// Returns a raw pointer to the vector's buffer, or a dangling raw pointer
     /// valid for zero sized reads if the vector didn't allocate.
     ///
@@ -1046,7 +1041,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         ptr
     }
 
-    #[rapx::verify]
     /// Returns an unsafe mutable pointer to the vector's buffer, or a dangling
     /// raw pointer valid for zero sized reads if the vector didn't allocate.
     ///
@@ -1165,7 +1159,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         self.len = new_len;
     }
 
-    #[rapx::verify]
     /// Removes an element from the vector and returns it.
     ///
     /// The removed element is replaced by the last element of the vector.
@@ -1204,7 +1197,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         }
     }
 
-    #[rapx::verify]
     /// Inserts an element at position `index` within the vector, shifting all
     /// elements after it to the right.
     ///
@@ -1250,7 +1242,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         }
     }
 
-    #[rapx::verify]
     /// Removes and returns the element at position `index` within the vector,
     /// shifting all elements after it to the left.
     ///
@@ -1338,7 +1329,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         self.drain_filter(|x| !f(x));
     }
 
-    #[rapx::verify]
     /// Creates an iterator that removes the elements in the vector
     /// for which the predicate returns `true` and yields the removed items.
     ///
@@ -1493,7 +1483,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         }
     }
 
-    #[rapx::verify]
     /// Removes the last element from a vector and returns it, or [`None`] if it
     /// is empty.
     ///
@@ -1549,7 +1538,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         }
     }
 
-    #[rapx::verify]
     /// Moves all the elements of `other` into `Self`, leaving `other` empty.
     ///
     /// # Panics
@@ -1587,7 +1575,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         self.len += count;
     }
 
-    #[rapx::verify]
     /// Creates a draining iterator that removes the specified range in the vector
     /// and yields the removed items.
     ///
@@ -1724,7 +1711,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
         self.len() == 0
     }
 
-    #[rapx::verify]
     /// Splits the collection into two at the given index.
     ///
     /// Returns a newly allocated vector. `self` contains elements `[0, at)`,
@@ -1768,7 +1754,6 @@ impl<'bump, T: 'bump> Vec<'bump, T> {
 
 #[cfg(feature = "boxed")]
 impl<'bump, T> Vec<'bump, T> {
-    #[rapx::verify]
     /// Converts the vector into [`Box<[T]>`][owned slice].
     ///
     /// Note that this will drop any excess capacity.
@@ -2294,7 +2279,6 @@ where
 impl<'bump, T: 'bump> ops::Deref for Vec<'bump, T> {
     type Target = [T];
 
-    #[rapx::verify]
     fn deref(&self) -> &[T] {
         unsafe {
             let p = self.buf.ptr();
@@ -2305,7 +2289,6 @@ impl<'bump, T: 'bump> ops::Deref for Vec<'bump, T> {
 }
 
 impl<'bump, T: 'bump> ops::DerefMut for Vec<'bump, T> {
-    #[rapx::verify]
     fn deref_mut(&mut self) -> &mut [T] {
         unsafe {
             let ptr = self.buf.ptr();
@@ -2319,7 +2302,6 @@ impl<'bump, T: 'bump> IntoIterator for Vec<'bump, T> {
     type Item = T;
     type IntoIter = IntoIter<'bump, T>;
 
-    #[rapx::verify]
     /// Creates a consuming iterator, that is, one that moves each value out of
     /// the vector (from start to end). The vector cannot be used after calling
     /// this.
@@ -2361,7 +2343,6 @@ impl<'a, 'bump, T> IntoIterator for &'a Vec<'bump, T> {
     type Item = &'a T;
     type IntoIter = slice::Iter<'a, T>;
 
-    #[rapx::verify]
     fn into_iter(self) -> slice::Iter<'a, T> {
         self.iter()
     }
@@ -2371,7 +2352,6 @@ impl<'a, 'bump, T> IntoIterator for &'a mut Vec<'bump, T> {
     type Item = &'a mut T;
     type IntoIter = slice::IterMut<'a, T>;
 
-    #[rapx::verify]
     fn into_iter(self) -> slice::IterMut<'a, T> {
         self.iter_mut()
     }
@@ -2568,7 +2548,6 @@ impl<'bump, T: 'bump> BorrowMut<[T]> for Vec<'bump, T> {
 }
 
 impl<'bump, T> Drop for Vec<'bump, T> {
-    #[rapx::verify]
     fn drop(&mut self) {
         unsafe {
             // use drop for [T]
@@ -2619,7 +2598,6 @@ impl<'bump, T: fmt::Debug> fmt::Debug for IntoIter<'bump, T> {
 }
 
 impl<'bump, T: 'bump> IntoIter<'bump, T> {
-    #[rapx::verify]
     /// Returns the remaining items of this iterator as a slice.
     ///
     /// # Examples
@@ -2639,7 +2617,6 @@ impl<'bump, T: 'bump> IntoIter<'bump, T> {
         unsafe { slice::from_raw_parts(self.ptr, self.len()) }
     }
 
-    #[rapx::verify]
     /// Returns the remaining items of this iterator as a mutable slice.
     ///
     /// # Examples
@@ -2668,7 +2645,6 @@ unsafe impl<'bump, T: Sync> Sync for IntoIter<'bump, T> {}
 impl<'bump, T: 'bump> Iterator for IntoIter<'bump, T> {
     type Item = T;
 
-    #[rapx::verify]
     #[inline]
     fn next(&mut self) -> Option<T> {
         unsafe {
@@ -2691,7 +2667,6 @@ impl<'bump, T: 'bump> Iterator for IntoIter<'bump, T> {
         }
     }
 
-    #[rapx::verify]
     #[inline]
     fn size_hint(&self) -> (usize, Option<usize>) {
         let exact = if mem::size_of::<T>() == 0 {
@@ -2709,7 +2684,6 @@ impl<'bump, T: 'bump> Iterator for IntoIter<'bump, T> {
 }
 
 impl<'bump, T: 'bump> DoubleEndedIterator for IntoIter<'bump, T> {
-    #[rapx::verify]
     #[inline]
     fn next_back(&mut self) -> Option<T> {
         unsafe {
@@ -2766,7 +2740,6 @@ unsafe impl<'a, 'bump, T: Send> Send for Drain<'a, 'bump, T> {}
 impl<'a, 'bump, T> Iterator for Drain<'a, 'bump, T> {
     type Item = T;
 
-    #[rapx::verify]
     #[inline]
     fn next(&mut self) -> Option<T> {
         self.iter
@@ -2780,7 +2753,6 @@ impl<'a, 'bump, T> Iterator for Drain<'a, 'bump, T> {
 }
 
 impl<'a, 'bump, T> DoubleEndedIterator for Drain<'a, 'bump, T> {
-    #[rapx::verify]
     #[inline]
     fn next_back(&mut self) -> Option<T> {
         self.iter
@@ -2790,7 +2762,6 @@ impl<'a, 'bump, T> DoubleEndedIterator for Drain<'a, 'bump, T> {
 }
 
 impl<'a, 'bump, T> Drop for Drain<'a, 'bump, T> {
-    #[rapx::verify]
     fn drop(&mut self) {
         // exhaust self first
         self.for_each(drop);
@@ -2851,7 +2822,6 @@ impl<'a, 'bump, I: Iterator> DoubleEndedIterator for Splice<'a, 'bump, I> {
 impl<'a, 'bump, I: Iterator> ExactSizeIterator for Splice<'a, 'bump, I> {}
 
 impl<'a, 'bump, I: Iterator> Drop for Splice<'a, 'bump, I> {
-    #[rapx::verify]
     fn drop(&mut self) {
         self.drain.by_ref().for_each(drop);
 
@@ -2954,7 +2924,6 @@ where
 {
     type Item = T;
 
-    #[rapx::verify]
     fn next(&mut self) -> Option<T> {
         debug_assert_eq!(self.vec.len(), 0);
         debug_assert!(self.write <= self.idx);
@@ -2987,7 +2956,6 @@ impl<'a, 'bump, T, F> Drop for DrainFilter<'a, 'bump, T, F>
 where
     F: FnMut(&mut T) -> bool,
 {
-    #[rapx::verify]
     fn drop(&mut self) {
         /// Guard to shift the trailing items into place if the `DrainFilter`'s
         /// predicate panics, leaving it in a valid state.

@@ -586,7 +586,6 @@ impl<T: ArchivePointee + ?Sized, O: Offset> RelPtr<T, O> {
         )
     }
 
-    #[rapx::verify]
     /// Calculates the mutable memory address being pointed to by this relative
     /// pointer.
     ///

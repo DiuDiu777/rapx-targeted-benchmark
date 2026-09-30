@@ -549,7 +549,6 @@ impl<'bump> String<'bump> {
         }
     }
 
-    #[rapx::verify]
     /// Converts a slice of bytes to a string, including invalid characters.
     ///
     /// Strings are made of bytes ([`u8`]), and a slice of bytes
@@ -668,7 +667,6 @@ impl<'bump> String<'bump> {
         Ok(ret)
     }
 
-    #[rapx::verify]
     /// Construct a new `String<'bump>` from a string slice.
     ///
     /// # Examples
@@ -719,7 +717,6 @@ impl<'bump> String<'bump> {
         s
     }
 
-    #[rapx::verify]
     /// Creates a new `String` from a length, capacity, and pointer.
     ///
     /// # Safety
@@ -853,7 +850,6 @@ impl<'bump> String<'bump> {
         self.vec
     }
 
-    #[rapx::verify]
     /// Convert this `String<'bump>` into a `&'bump str`. This is analogous to
     /// [`std::string::String::into_boxed_str`][into_boxed_str].
     ///
@@ -1192,7 +1188,6 @@ impl<'bump> String<'bump> {
         }
     }
 
-    #[rapx::verify]
     /// Removes the last character from the string buffer and returns it.
     ///
     /// Returns [`None`] if this `String` is empty.
@@ -1226,7 +1221,6 @@ impl<'bump> String<'bump> {
         Some(ch)
     }
 
-    #[rapx::verify]
     /// Removes a [`char`] from this `String` at a byte position and returns it.
     ///
     /// This is an `O(n)` operation, as it requires copying every element in the
@@ -1274,7 +1268,6 @@ impl<'bump> String<'bump> {
         ch
     }
 
-    #[rapx::verify]
     /// Retains only the characters specified by the predicate.
     ///
     /// In other words, remove all characters `c` such that `f(c)` returns `false`.
@@ -1519,7 +1512,6 @@ impl<'bump> String<'bump> {
         self.len() == 0
     }
 
-    #[rapx::verify]
     /// Splits the string into two at the given index.
     ///
     /// Returns a newly allocated `String`. `self` contains bytes `[0, at)`, and
@@ -1649,7 +1641,6 @@ impl<'bump> String<'bump> {
         }
     }
 
-    #[rapx::verify]
     /// Removes the specified range in the string,
     /// and replaces it with the given string.
     /// The given string doesn't need to be the same length as the range.
@@ -1981,7 +1972,6 @@ impl<'a, 'bump> AddAssign<&'a str> for String<'bump> {
 impl<'bump> ops::Index<ops::Range<usize>> for String<'bump> {
     type Output = str;
 
-    #[rapx::verify]
     #[inline]
     fn index(&self, index: ops::Range<usize>) -> &str {
         &self[..][index]
@@ -1990,7 +1980,6 @@ impl<'bump> ops::Index<ops::Range<usize>> for String<'bump> {
 impl<'bump> ops::Index<ops::RangeTo<usize>> for String<'bump> {
     type Output = str;
 
-    #[rapx::verify]
     #[inline]
     fn index(&self, index: ops::RangeTo<usize>) -> &str {
         &self[..][index]
@@ -1999,7 +1988,6 @@ impl<'bump> ops::Index<ops::RangeTo<usize>> for String<'bump> {
 impl<'bump> ops::Index<ops::RangeFrom<usize>> for String<'bump> {
     type Output = str;
 
-    #[rapx::verify]
     #[inline]
     fn index(&self, index: ops::RangeFrom<usize>) -> &str {
         &self[..][index]
@@ -2008,7 +1996,6 @@ impl<'bump> ops::Index<ops::RangeFrom<usize>> for String<'bump> {
 impl<'bump> ops::Index<ops::RangeFull> for String<'bump> {
     type Output = str;
 
-    #[rapx::verify]
     #[inline]
     fn index(&self, _index: ops::RangeFull) -> &str {
         unsafe { str::from_utf8_unchecked(&self.vec) }
@@ -2017,7 +2004,6 @@ impl<'bump> ops::Index<ops::RangeFull> for String<'bump> {
 impl<'bump> ops::Index<ops::RangeInclusive<usize>> for String<'bump> {
     type Output = str;
 
-    #[rapx::verify]
     #[inline]
     fn index(&self, index: ops::RangeInclusive<usize>) -> &str {
         Index::index(&**self, index)
@@ -2026,7 +2012,6 @@ impl<'bump> ops::Index<ops::RangeInclusive<usize>> for String<'bump> {
 impl<'bump> ops::Index<ops::RangeToInclusive<usize>> for String<'bump> {
     type Output = str;
 
-    #[rapx::verify]
     #[inline]
     fn index(&self, index: ops::RangeToInclusive<usize>) -> &str {
         Index::index(&**self, index)
@@ -2034,42 +2019,36 @@ impl<'bump> ops::Index<ops::RangeToInclusive<usize>> for String<'bump> {
 }
 
 impl<'bump> ops::IndexMut<ops::Range<usize>> for String<'bump> {
-    #[rapx::verify]
     #[inline]
     fn index_mut(&mut self, index: ops::Range<usize>) -> &mut str {
         &mut self[..][index]
     }
 }
 impl<'bump> ops::IndexMut<ops::RangeTo<usize>> for String<'bump> {
-    #[rapx::verify]
     #[inline]
     fn index_mut(&mut self, index: ops::RangeTo<usize>) -> &mut str {
         &mut self[..][index]
     }
 }
 impl<'bump> ops::IndexMut<ops::RangeFrom<usize>> for String<'bump> {
-    #[rapx::verify]
     #[inline]
     fn index_mut(&mut self, index: ops::RangeFrom<usize>) -> &mut str {
         &mut self[..][index]
     }
 }
 impl<'bump> ops::IndexMut<ops::RangeFull> for String<'bump> {
-    #[rapx::verify]
     #[inline]
     fn index_mut(&mut self, _index: ops::RangeFull) -> &mut str {
         unsafe { str::from_utf8_unchecked_mut(&mut *self.vec) }
     }
 }
 impl<'bump> ops::IndexMut<ops::RangeInclusive<usize>> for String<'bump> {
-    #[rapx::verify]
     #[inline]
     fn index_mut(&mut self, index: ops::RangeInclusive<usize>) -> &mut str {
         IndexMut::index_mut(&mut **self, index)
     }
 }
 impl<'bump> ops::IndexMut<ops::RangeToInclusive<usize>> for String<'bump> {
-    #[rapx::verify]
     #[inline]
     fn index_mut(&mut self, index: ops::RangeToInclusive<usize>) -> &mut str {
         IndexMut::index_mut(&mut **self, index)
@@ -2079,7 +2058,6 @@ impl<'bump> ops::IndexMut<ops::RangeToInclusive<usize>> for String<'bump> {
 impl<'bump> ops::Deref for String<'bump> {
     type Target = str;
 
-    #[rapx::verify]
     #[inline]
     fn deref(&self) -> &str {
         unsafe { str::from_utf8_unchecked(&self.vec) }
@@ -2087,7 +2065,6 @@ impl<'bump> ops::Deref for String<'bump> {
 }
 
 impl<'bump> ops::DerefMut for String<'bump> {
-    #[rapx::verify]
     #[inline]
     fn deref_mut(&mut self) -> &mut str {
         unsafe { str::from_utf8_unchecked_mut(&mut *self.vec) }
@@ -2161,7 +2138,6 @@ unsafe impl<'a, 'bump> Sync for Drain<'a, 'bump> {}
 unsafe impl<'a, 'bump> Send for Drain<'a, 'bump> {}
 
 impl<'a, 'bump> Drop for Drain<'a, 'bump> {
-    #[rapx::verify]
     fn drop(&mut self) {
         unsafe {
             // Use Vec::drain. "Reaffirm" the bounds checks to avoid

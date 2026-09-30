@@ -174,7 +174,6 @@ where
     }
 }
 
-#[rapx::verify]
 /// Executes a closure with a Python critical section held on a `PyMutex`.
 ///
 /// Locks the mutex `mutex` until the closure `f` finishes. The mutex may be temporarily unlocked
@@ -213,7 +212,6 @@ where
     }
 }
 
-#[rapx::verify]
 /// Executes a closure with a Python critical section held on two `PyMutex` instances.
 ///
 /// Simultaneously locks the mutexes `m1` and `m2` and holds them until the closure `f` is

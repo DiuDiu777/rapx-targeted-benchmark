@@ -17,6 +17,13 @@ ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 HEADER = re.compile(r"\[rapx::verify\]\s*(?:function:|sequence:|unsafe impl)\s*(.+)")
 RESULT = re.compile(r"\b(?:result|verdict):\s*(SOUND|UNSOUND|UNKNOWN|SAFE|UNSAFE)\b")
 VERDICT_PRIORITY = {"SOUND": 0, "UNKNOWN": 1, "UNSOUND": 2}
+TARGET_ALIASES = {
+    "heapless": {
+        "deque::DequeInner": "deque::Deque",
+        "string::StringInner": "string::String",
+        "vec::VecInner": "vec::Vec",
+    },
+}
 
 
 def _without_generics(path: str) -> str:
@@ -59,6 +66,16 @@ def canonical_target(label: str, crate_name: str) -> str:
     return label
 
 
+def target_candidates(label: str, crate_name: str) -> list[str]:
+    """Return exact and public-alias spellings for a rustc target label."""
+    candidates = [label]
+    for internal, public in TARGET_ALIASES.get(crate_name, {}).items():
+        prefix = internal + "::"
+        if label.startswith(prefix):
+            candidates.append(public + label[len(internal):])
+    return candidates
+
+
 def parse_log(text: str, intended_targets: list[str], crate_name: str) -> dict:
     clean = ANSI.sub("", text)
     records = []
@@ -87,7 +104,12 @@ def parse_log(text: str, intended_targets: list[str], crate_name: str) -> dict:
     ignored = []
     for label, verdict in records:
         normalized = canonical_target(label, crate_name)
-        if normalized not in intended:
+        normalized = next(
+            (candidate for candidate in target_candidates(normalized, crate_name)
+             if candidate in intended),
+            None,
+        )
+        if normalized is None:
             ignored.append(label)
             continue
         previous = matched.get(normalized)

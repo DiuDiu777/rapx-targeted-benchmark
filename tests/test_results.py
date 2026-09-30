@@ -61,6 +61,19 @@ class ParseResultsTest(unittest.TestCase):
             "boxed::Box::from_raw",
         )
 
+    def test_matches_heapless_internal_type_to_public_alias(self):
+        log = """
+        00|RAPx|INFO|: [rapx::verify] function: vec::VecInner::<T, S>::from_array
+        00|RAPx|WARN|: result: UNKNOWN
+        """
+        result = run_one.parse_log(
+            log, ["heapless::vec::Vec::from_array"], "heapless"
+        )
+        self.assertEqual(
+            result["counts"],
+            {"SOUND": 0, "UNSOUND": 0, "UNKNOWN": 1, "NOT_RUN": 0},
+        )
+
     def test_release_time_nightly_is_pinned(self):
         data = {
             "crate": {"max_stable_version": "0.7.50"},

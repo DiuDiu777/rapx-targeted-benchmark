@@ -1,0 +1,10 @@
+{
+  "run_date": "2026-09-30",
+  "run_id": "36668873824",
+  "run_url": "https://github.com/DiuDiu777/rapx-targeted-benchmark/actions/runs/36668873824",
+  "commit_sha": "452c7f0af2c7e78d8db28d99c8f1d181bd51aba6",
+  "rapx_version": "0.7.50",
+  "toolchain": "nightly-2026-09-18",
+  "crate_count": 10,
+  "target_count": 564
+}

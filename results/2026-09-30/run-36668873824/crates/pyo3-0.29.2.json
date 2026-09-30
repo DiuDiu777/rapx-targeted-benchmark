@@ -1,0 +1,47 @@
+{
+  "crate": "pyo3",
+  "crate_version": "0.29.2",
+  "rapx_version": "0.7.50",
+  "toolchain": "nightly-2026-09-18",
+  "status": "COMPLETE",
+  "declared_api_targets": 33,
+  "active_targets": 33,
+  "counts": {
+    "SOUND": 24,
+    "UNSOUND": 9,
+    "UNKNOWN": 0,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 72.73,
+    "UNSOUND": 27.27,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 51,
+  "ignored_log_records": 18,
+  "ignored_log_targets": [
+    "<internal::state::AttachGuard as std::ops::Drop>::drop",
+    "<internal::state::SuspendAttach as std::ops::Drop>::drop",
+    "<internal::state::ForbidAttaching as std::ops::Drop>::drop",
+    "<impl_::panic::PanicTrap as std::ops::Drop>::drop",
+    "<impl_::pyclass::lazy_type_object::LazyTypeObjectInner::ensure_init::InitializationGuard<'_> as std::ops::Drop>::drop",
+    "<impl_::pymethods::traverse_impl::TraverseGuard<'_, T> as std::ops::Drop>::drop",
+    "<buffer::PyUntypedBuffer as std::ops::Drop>::drop",
+    "<conversions::std::array::array_try_from_fn::ArrayGuard<T, N> as std::ops::Drop>::drop",
+    "<instance::Bound<'_, T> as std::ops::Drop>::drop",
+    "<instance::Py<T> as std::ops::Drop>::drop",
+    "<sync::GILOnceCell<T> as std::ops::Drop>::drop",
+    "<byteswriter::PyBytesWriter<'py> as std::ops::Drop>::drop",
+    "<pycell::PyRef<'_, T> as std::ops::Drop>::drop",
+    "<pycell::PyRefMut<'_, T> as std::ops::Drop>::drop",
+    "<pyclass::guard::PyClassGuard<'_, T> as std::ops::Drop>::drop",
+    "<pyclass::guard::PyClassGuardMap<'_, U> as std::ops::Drop>::drop",
+    "<pyclass::guard::PyClassGuardMut<'_, T> as std::ops::Drop>::drop",
+    "<pyclass::guard::PyClassGuardMapMut<'_, U> as std::ops::Drop>::drop"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 34.35,
+  "finished_at": "2026-09-30T04:29:09.560992+00:00"
+}

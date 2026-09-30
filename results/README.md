@@ -1,4 +1,7 @@
 # Benchmark results
 
-Results are grouped by run date in Asia/Shanghai time. The index will be
-updated after the next manually triggered benchmark run completes.
+Results are grouped by run date in Asia/Shanghai time.
+
+| Date | Run | Commit | RAPx | Summary |
+|---|---:|---|---|---|
+| 2026-09-30 | [36668873824](https://github.com/DiuDiu777/rapx-targeted-benchmark/actions/runs/36668873824) | `452c7f0` | `0.7.50` | [results](2026-09-30/run-36668873824/summary.md) |

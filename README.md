@@ -42,7 +42,7 @@ count as one manifest target.
 Every completed branch run is committed by `github-actions[bot]` under:
 
 ```text
-results/<Asia-Shanghai date>/run-<GitHub run id>/
+results/<Asia-Shanghai date>/run-<GitHub run id>[-attempt-N]/
 ```
 
 [`results/README.md`](results/README.md) is rebuilt as a newest-first index.

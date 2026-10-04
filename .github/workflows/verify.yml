@@ -131,24 +131,33 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           run_date="$(TZ=Asia/Shanghai date +%F)"
-          python3 scripts/persist_results.py \
-            --input collected \
-            --summary "$RUNNER_TEMP/summary" \
-            --results-root results \
-            --run-date "$run_date" \
-            --run-id "$GITHUB_RUN_ID" \
-            --run-url "$RUN_URL" \
-            --commit-sha "$GITHUB_SHA"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add results
-          if git diff --cached --quiet; then
-            echo "Run $GITHUB_RUN_ID is already stored."
-            exit 0
-          fi
-          git commit -m "Store RAPx results for $run_date (run $GITHUB_RUN_ID)"
-          git pull --rebase origin "$TARGET_BRANCH"
-          git push origin "HEAD:$TARGET_BRANCH"
+          for publish_attempt in 1 2 3; do
+            git fetch origin "$TARGET_BRANCH"
+            git checkout --detach --force "origin/$TARGET_BRANCH"
+            python3 scripts/persist_results.py \
+              --input collected \
+              --summary "$RUNNER_TEMP/summary" \
+              --results-root results \
+              --run-date "$run_date" \
+              --run-id "$GITHUB_RUN_ID" \
+              --run-attempt "$GITHUB_RUN_ATTEMPT" \
+              --run-url "$RUN_URL" \
+              --commit-sha "$GITHUB_SHA"
+            git add results
+            if git diff --cached --quiet; then
+              echo "Run $GITHUB_RUN_ID attempt $GITHUB_RUN_ATTEMPT is already stored."
+              exit 0
+            fi
+            git commit -m "Store RAPx results for $run_date (run $GITHUB_RUN_ID, attempt $GITHUB_RUN_ATTEMPT)"
+            if git push origin "HEAD:$TARGET_BRANCH"; then
+              exit 0
+            fi
+            echo "The branch advanced while publishing; retrying ($publish_attempt/3)."
+          done
+          echo "Failed to publish results after 3 attempts." >&2
+          exit 1
       - uses: actions/upload-artifact@v4
         if: always()
         with:

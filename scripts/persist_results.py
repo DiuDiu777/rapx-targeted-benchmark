@@ -13,7 +13,14 @@ def rebuild_index(results_root: Path) -> None:
         metadata = json.loads(metadata_path.read_text())
         run_dir = metadata_path.parent
         runs.append((metadata, run_dir.relative_to(results_root)))
-    runs.sort(key=lambda item: (item[0]["run_date"], int(item[0]["run_id"])), reverse=True)
+    runs.sort(
+        key=lambda item: (
+            item[0]["run_date"],
+            int(item[0]["run_id"]),
+            int(item[0].get("run_attempt", 1)),
+        ),
+        reverse=True,
+    )
 
     lines = [
         "# Benchmark results",
@@ -25,9 +32,13 @@ def rebuild_index(results_root: Path) -> None:
     ]
     for metadata, run_dir in runs:
         sha = metadata["commit_sha"]
+        run_label = metadata["run_id"]
+        run_attempt = int(metadata.get("run_attempt", 1))
+        if run_attempt > 1:
+            run_label += f" (attempt {run_attempt})"
         lines.append(
             f"| {metadata['run_date']} | "
-            f"[{metadata['run_id']}]({metadata['run_url']}) | "
+            f"[{run_label}]({metadata['run_url']}) | "
             f"`{sha[:7]}` | `{metadata['rapx_version']}` | "
             f"[results]({run_dir.as_posix()}/summary.md) |"
         )
@@ -41,12 +52,16 @@ def main() -> None:
     parser.add_argument("--results-root", type=Path, required=True)
     parser.add_argument("--run-date", required=True)
     parser.add_argument("--run-id", required=True)
+    parser.add_argument("--run-attempt", type=int, default=1)
     parser.add_argument("--run-url", required=True)
     parser.add_argument("--commit-sha", required=True)
     args = parser.parse_args()
 
     summary = json.loads((args.summary / "summary.json").read_text())
-    run_dir = args.results_root / args.run_date / f"run-{args.run_id}"
+    run_name = f"run-{args.run_id}"
+    if args.run_attempt > 1:
+        run_name += f"-attempt-{args.run_attempt}"
+    run_dir = args.results_root / args.run_date / run_name
     crates_dir = run_dir / "crates"
     crates_dir.mkdir(parents=True, exist_ok=True)
     shutil.copy2(args.summary / "summary.md", run_dir / "summary.md")
@@ -65,6 +80,7 @@ def main() -> None:
     metadata = {
         "run_date": args.run_date,
         "run_id": args.run_id,
+        "run_attempt": args.run_attempt,
         "run_url": args.run_url,
         "commit_sha": args.commit_sha,
         "rapx_version": summary["rapx_version"],

@@ -1,0 +1,11 @@
+{
+  "run_date": "2026-10-04",
+  "run_id": "37164669257",
+  "run_attempt": 1,
+  "run_url": "https://github.com/safer-rust/rapx-targeted-benchmark/actions/runs/37164669257",
+  "commit_sha": "d33b5f769fe292d36e2441163fd8603f02baa229",
+  "rapx_version": "0.7.51",
+  "toolchain": "nightly-2026-10-02",
+  "crate_count": 10,
+  "target_count": 564
+}

@@ -1,0 +1,43 @@
+{
+  "crate": "heapless",
+  "crate_version": "0.9.3",
+  "rapx_version": "0.7.52",
+  "toolchain": "nightly-2026-10-03",
+  "status": "PARTIAL",
+  "declared_api_targets": 75,
+  "active_targets": 75,
+  "counts": {
+    "SOUND": 17,
+    "UNSOUND": 53,
+    "UNKNOWN": 5,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 22.67,
+    "UNSOUND": 70.67,
+    "UNKNOWN": 6.67,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 89,
+  "ignored_log_records": 14,
+  "ignored_log_targets": [
+    "<deque::DequeInner<T, S>::clear::Guard<'a, T, S> as core::ops::Drop>::drop",
+    "<deque::DequeInner<T, S>::truncate::Dropper<'a, T> as core::ops::Drop>::drop",
+    "<deque::DequeInner<T, S> as core::ops::Drop>::drop",
+    "<history_buf::HistoryBufInner<T, S>::clear::Guard<'a, T, S> as core::ops::Drop>::drop",
+    "<history_buf::HistoryBufInner<T, S> as core::ops::Drop>::drop",
+    "<index_map::IndexMap<K, V, S, N>::clear::Guard<'a, K, V, S, N> as core::ops::Drop>::drop",
+    "<string::drain::Drain<'_, LenT> as core::ops::Drop>::drop",
+    "<vec::drain::Drain<'_, T, LenT> as core::ops::Drop>::drop",
+    "<<vec::drain::Drain<'_, T, LenT> as core::ops::Drop>::drop::DropGuard<'_, '_, T, LenT> as core::ops::Drop>::drop",
+    "<vec::VecInner<T, LenT, S>::retain_mut::BackshiftOnDrop<'_, T, LenT, S> as core::ops::Drop>::drop",
+    "<binary_heap::PeekMutInner<'_, T, K, S> as core::ops::Drop>::drop",
+    "<binary_heap::Hole<'_, T> as core::ops::Drop>::drop",
+    "<mpmc::QueueInner<T, S> as core::ops::Drop>::drop",
+    "<sorted_linked_list::FindMutView<'_, T, Idx, K> as core::ops::Drop>::drop"
+  ],
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 54.33,
+  "finished_at": "2026-10-04T03:11:36.791005+00:00"
+}

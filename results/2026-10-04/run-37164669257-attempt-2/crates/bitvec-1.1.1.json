@@ -1,0 +1,34 @@
+{
+  "crate": "bitvec",
+  "crate_version": "1.1.1",
+  "rapx_version": "0.7.52",
+  "toolchain": "nightly-2026-10-03",
+  "status": "COMPLETE",
+  "declared_api_targets": 54,
+  "active_targets": 54,
+  "counts": {
+    "SOUND": 49,
+    "UNSOUND": 5,
+    "UNKNOWN": 0,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 90.74,
+    "UNSOUND": 9.26,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 59,
+  "ignored_log_records": 5,
+  "ignored_log_targets": [
+    "boxed::ops::<impl std::ops::Drop for boxed::BitBox<T, O: BitOrder>>::drop",
+    "<ptr::proxy::BitRef<'_, M, T, O> as std::ops::Drop>::drop",
+    "<vec::iter::Drain<'_, T, O> as std::ops::Drop>::drop",
+    "<vec::iter::Splice<'_, T, O, I> as std::ops::Drop>::drop",
+    "vec::ops::<impl std::ops::Drop for vec::BitVec<T, O: BitOrder>>::drop"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 7.69,
+  "finished_at": "2026-10-04T03:10:50.041908+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "crate": "rkyv",
+  "crate_version": "0.8.18",
+  "rapx_version": "0.7.52",
+  "toolchain": "nightly-2026-10-03",
+  "status": "COMPLETE",
+  "declared_api_targets": 48,
+  "active_targets": 48,
+  "counts": {
+    "SOUND": 26,
+    "UNSOUND": 22,
+    "UNKNOWN": 0,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 54.17,
+    "UNSOUND": 45.83,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 57,
+  "ignored_log_records": 6,
+  "ignored_log_targets": [
+    "<de::pooling::alloc::SharedPointer as std::ops::Drop>::drop",
+    "<ser::allocator::alloc::Arena as std::ops::Drop>::drop",
+    "<util::alloc::aligned_vec::AlignedVec<A> as std::ops::Drop>::drop",
+    "<util::inline_vec::InlineVec<T, N> as std::ops::Drop>::drop",
+    "<util::inline_vec::Drain<'_, T, N> as std::ops::Drop>::drop",
+    "<util::ser_vec::Drain<'_, T> as std::ops::Drop>::drop"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 12.79,
+  "finished_at": "2026-10-04T03:10:52.033620+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "crate": "smallvec",
+  "crate_version": "1.16.2",
+  "rapx_version": "0.7.52",
+  "toolchain": "nightly-2026-10-03",
+  "status": "PARTIAL",
+  "declared_api_targets": 40,
+  "active_targets": 40,
+  "counts": {
+    "SOUND": 6,
+    "UNSOUND": 26,
+    "UNKNOWN": 0,
+    "NOT_RUN": 8
+  },
+  "percentages": {
+    "SOUND": 15.0,
+    "UNSOUND": 65.0,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 20.0
+  },
+  "observed_log_records": 38,
+  "ignored_log_records": 6,
+  "ignored_log_targets": [
+    "<SmallVec<A>::insert_many::DropOnPanic<T> as core::ops::Drop>::drop",
+    "<SmallVec<A>::retain::PanicGuard<'_, A> as core::ops::Drop>::drop",
+    "<IntoIter<A> as core::ops::Drop>::drop",
+    "<&'a SmallVec<A> as core::iter::IntoIterator>::into_iter",
+    "<&'a mut SmallVec<A> as core::iter::IntoIterator>::into_iter",
+    "<SetLenOnDrop<'a> as core::ops::Drop>::drop"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 79.48,
+  "finished_at": "2026-10-04T03:12:04.156752+00:00"
+}
